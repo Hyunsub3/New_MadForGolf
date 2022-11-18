@@ -506,13 +506,14 @@ a.button {
 	.ProductArea{
 		margin-left:60px;
 	}
+	.pagination .page-item .page-link{
+		width: 20px !important;
+		height: 20px !important;
+		border: none !important;
+		font-size: 20px;`
+	}
 
 }
-
-
-
-}
-
 /*====================반응형 웹======================= */
 </style>
 
@@ -601,7 +602,7 @@ a.button {
 						<div class="single-product-area mb-50" style="margin-top: 25px;">
 							<!-- Product Image -->
 							<div class="product-img"> 
-								<a id="ProductArea" href="${pageContext.request.contextPath }/product/productDetail?prod_num=${vo.prod_num}"><img src="${pageContext.request.contextPath }/resources/product_img/${vo.prod_img}" id="img"></a>
+								<a id="ProductArea" href="${pageContext.request.contextPath }/product/productDetail?prod_num=${vo.prod_num}"><img style="width: 300px; height: 300px;" src="${pageContext.request.contextPath }/resources/product_img/${vo.prod_img}" id="img"></a>
 								<!-- Product Tag -->
 								<div class="product-tag">
 									<!-- <a href="#">Hot</a> -->
