@@ -66,8 +66,7 @@
 
 	
 	<!-- ##### Shop Area Start ##### -->
-<section class="shop-page section-padding-0-100"
-	style="width: 80%; margin: auto;">
+<section class="shop-page section-padding-0-100" style="width: 80%; margin: auto;">
 
 
 	<!-- All Products Area -->
@@ -77,7 +76,7 @@
 			<div class="row">
 				<!-- Single Product Area -->
 				<!-- for문으로 상품 리스트 반복  -->
-				<c:forEach var="vo" items="${productList }" begin="1" end="6">
+				<c:forEach var="vo" items="${productList }" begin="0" end="5">
 					<div class="col-12 col-sm-6 col-lg-4">
 						<div class="single-product-area mb-50">
 							<!-- Product Image -->
@@ -191,7 +190,7 @@
 								         if (status === kakao.maps.services.Status.OK) {
 								        	 	$('#centerAddr').val(result[0].address.address_name);
 								        	 	var addr = result[0].address.address_name;
-								        	 	
+								        	 	console.log(addr);
 								        	 	$.ajax({
 								        	 		url: "./product/address",
 								        	 		data: {"address":result[0].address.address_name},

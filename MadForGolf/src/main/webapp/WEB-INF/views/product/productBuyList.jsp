@@ -189,13 +189,33 @@ color: #fff;
     background-color: #91C788;
     color: #ffffff;
 }
+
+
+@media only screen and (max-width: 414px) { /* 414*896  */
+	.table th{
+		font-size: 14px !important;
+	}
+	#prod_name{
+		width: 130px !important;
+	}
+	#review{
+		width: 100px !important;
+	}
+
+	.btn btn-review-write{
+		width: 65px !important;
+		height: 35px !important;
+		font-size: 10px !important;
+		text-align: center !important;
+		margin-left: 5px !important;
+	}
+}
 </style>
    
      <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(${pageContext.request.contextPath }/resources/img/bg-img/24.jpg);">
-            <h2>거래목록</h2>
+<div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/resources/img/bg-img/background-img (4).jpg');">            <h2>거래목록</h2>
         </div>
 
         <div class="container">
@@ -234,9 +254,9 @@ color: #fff;
 			
 				<tr class="text-center">
 					<th>거래일시</th>
-					<th>상품이름</th>
+					<th id="prod_name">상품이름</th>
 					<th>가격</th>
-					<th>리뷰</th>
+					<th id="review">리뷰</th>
 				</tr>
 			<c:forEach var="buy" items="${buyProductList }"> 
 				<tr>
@@ -248,7 +268,6 @@ color: #fff;
 					<td class="text-center">
 				    <c:choose>
 				    	<c:when test="${buy.review_count==0}">
-				    		 
 				    		<button class="btn btn-review-write" id="reviewBtn-${buy.product.prod_num}" onclick="reviewBtn('${buy.product.prod_num}')">리뷰 작성</button>	
 				    	</c:when>
 				    	<c:otherwise>

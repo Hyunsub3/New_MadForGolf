@@ -263,15 +263,21 @@ log.info("listAll2() 호출");
 
 
 	@Override
-	public void insertProduct(ProductVO vo) throws Exception{
+	public ProductVO insertProduct(ProductVO vo) throws Exception{
 		log.info("insertProduct(vo) 호출");
 		
 		// SQL 실행 - SqlSession 객체 (디비연결, Mybatis, 매퍼, 자원해제)
 		// 상품 등록 (Insert)
 		int result = sqlSession.insert(NAMESPACE + ".insert", vo);
 		
-		if(result > 0)
+		if(result > 0) {
 			log.info("상품 등록 완료!");
+		}
+		
+		ProductVO vo2 = sqlSession.selectOne(NAMESPACE + ".insert2", vo);
+		log.info("vo2 : " + vo2);
+		
+		return vo2;
 	}
 	
 	@Override

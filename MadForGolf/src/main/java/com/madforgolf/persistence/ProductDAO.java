@@ -41,7 +41,7 @@ public interface ProductDAO {
 	public DealVO getProductDetail(DealVO vo) throws Exception;
 	
 	// 상품 등록 - insertProduct(vo)
-	public void insertProduct(ProductVO vo) throws Exception;
+	public ProductVO insertProduct(ProductVO vo) throws Exception;
 	
 	// 상품정보 수정하기 - update
 	public Integer updateProduct(ProductVO vo) throws Exception;

@@ -27,7 +27,16 @@ public class ProductVO {
 		this.seller = seller;
 	}
 	
+	private DealVO deal;
 	
+	public DealVO getDeal() {
+		return deal;
+	}
+
+	public void setDeal(DealVO deal) {
+		this.deal = deal;
+	}
+
 	//거래 목록 리스트 띄우기 위해 deal_num추가
 	private int deal_num;
 	

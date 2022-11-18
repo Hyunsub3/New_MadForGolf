@@ -40,6 +40,18 @@
 	border-color: #70C745;
 	cursor: pointer;
 }
+
+@media only screen and (max-width: 414px) { /* 414*896  */
+	#context{
+		width:400px !important;
+		float: left;
+	}
+	#condition{
+		margin-left:3px !important;
+		margin-right:3px !important;
+	}
+
+}
 </style>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -155,8 +167,7 @@ function delFile(){
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(${pageContext.request.contextPath }/resources/img/bg-img/24.jpg);">
-            <h2>Modification</h2>
+<div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/resources/img/bg-img/background-img (4).jpg');">            <h2>Modification</h2>
         </div>
 
         <div class="container">
@@ -178,7 +189,7 @@ function delFile(){
     <div class="checkout_area mb-100" style="width: 800px; margin: 0px auto;">
         <div class="container">
             <div class="row justify-content-between">
-            	<div class="checkout_details_area clearfix">
+            	<div class="checkout_details_area clearfix" id="context">
                 	<h5>상품정보 수정</h5>
                     <form action="${pageContext.request.contextPath }/product/modify" method="post" id="form" enctype="multipart/form-data">
                     	<!-- 로그인 기능 구현 시 value 값 수정 필요 ${loginVO.user_id } -->
@@ -263,7 +274,7 @@ function delFile(){
                                 <label for="order-notes">Detail</label>
                                 <textarea class="form-control" id="detail" cols="30" rows="10" style="height: 300px;" placeholder="내용을 입력해주세요." name="detail">${deal.product.detail }</textarea>
                             </div>
-                            <div class="form-group d-flex align-items-center">
+                            <div class="form-group d-flex align-items-center" id="condition1">
                             	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="order-notes" style="margin-right: 30px;">Conditon</label>
                             	<c:choose>
 									<c:when test="${deal.product.condition eq '최상' }">

@@ -451,12 +451,14 @@ color:white;
 		width: 400px !important;
 	}
 	#ProductAreaPage{
-		margin: 0px !important;
+		margin: 3px !important;
 		padding: 0px !important;
 	}
 	.pagination .page-item .page-link{
 		width: 20px !important;
 		height: 20px !important;
+		border: none !important;
+		font-size: 20px;
 	}
 
 
@@ -469,8 +471,7 @@ color:white;
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(${pageContext.request.contextPath }/resources/img/bg-img/24.jpg);">
-            <h2>Shop</h2>
+<div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/resources/img/bg-img/background-img (4).jpg');">            <h2>Shop</h2>
         </div>
 
         <div class="container" style="margin: auto; width: 100%; " id="container1">
@@ -488,57 +489,7 @@ color:white;
     </div>
 	<!-- ##### Breadcrumb Area End ##### -->
 	
-	<!-- =================================남성용/여성용 성별 구분 상품 카테고리=========================================== -->
-<div
-	style="text-align: center; margin: 0px auto; height: 70px; width: 80%;" id="topMenu11">
-	<nav id="topMenu" style="margin: 0px auto;">
-		<ul>
-			<!-- 지역인증 완료되면 주솟값에 위도/경도 추가 -->
-			<!-- 남성용  -->
-			<li><a id="genderNav" class="menuLink1"
-				style="border-top-left-radius: 5px;"> Men's </a></li>
-			<li><a id="genderNav" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Driver&gender=1">Driver</a></li>
-			<li><a id="genderNav" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Iron&gender=1">Iron</a></li>
-			<li><a id="genderNav" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Utility&gender=1">Utility</a></li>
-			<li><a id="genderNav" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Wedge&gender=1">Wedge</a></li>
-			<li><a id="genderNav" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Putter&gender=1">Putter</a></li>
-			<li><a id="genderNav" class="menuLink"
-				style="border-top-right-radius: 5px;"
-				href="${pageContext.request.contextPath }/product/listAll?category=Etc&gender=1">Etc</a></li>
-		</ul>
-	</nav>
 
-
-	<nav id="topMenu" style="margin: 0px auto;">
-		<ul>
-			<!-- 여성용 -->
-			<li><a id="genderNav2" class="menuLink1"
-				style="border-bottom-left-radius: 5px;"> Women's </a></li>
-			<li><a id="genderNav2" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Driver&gender=2">Driver</a></li>
-			<li><a id="genderNav2" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Iron&gender=2">Iron</a></li>
-			<li><a id="genderNav2" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Utility&gender=2">Utility</a></li>
-			<li><a id="genderNav2" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Wedge&gender=2">Wedge</a></li>
-			<li><a id="genderNav2" class="menuLink"
-				href="${pageContext.request.contextPath }/product/listAll?category=Putter&gender=2">Putter</a></li>
-			<li><a id="genderNav2" class="menuLink"
-				style="border-bottom-right-radius: 5px;"
-				href="${pageContext.request.contextPath }/product/listAll?category=Etc&gender=2">Etc</a></li>
-			<li><a id="genderNav2" class="menuLink3">&nbsp;</a></li>
-			<li><a id="genderNav2" class="menuLink3">&nbsp;</a></li>
-		</ul>
-	</nav>
-</div>
-<!-- =================================남성용/여성용 성별 구분 상품 카테고리===========================================   -->
-	
 	<!-- ##### Shop Area Start ##### -->
 	<section class="shop-page section-padding-0-100" style="width: 80%; margin: auto;" id="container2">
         <div class="container" style="border: none; margin-top:0px; ">

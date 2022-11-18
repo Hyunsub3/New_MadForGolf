@@ -49,7 +49,7 @@ public interface ProductService {
 	public Integer getTotalCnt2(ProductVO vo) throws Exception;
 	
 	// 상품 등록 (Insert)
-	public void productInsert(ProductVO vo) throws Exception;
+	public ProductVO productInsert(ProductVO vo) throws Exception;
 	
 	// 상품정보 수정하기 (Update)
 	public Integer updateProduct(ProductVO vo) throws Exception;

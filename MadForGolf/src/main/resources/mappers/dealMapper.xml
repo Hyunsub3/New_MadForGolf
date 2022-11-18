@@ -26,8 +26,8 @@
 	
 	
 	<insert id="insertDeal">
-		insert into mfg_deal(seller_id, price, state) 
-		values(#{seller_id}, #{price}, #{state})
+		insert into mfg_deal(seller_id, price, state, prod_num) 
+		values(#{seller_id}, #{price}, #{state}, #{prod_num})
 	</insert>
 	
 	<update id="updateDeal">

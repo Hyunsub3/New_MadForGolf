@@ -23,6 +23,7 @@
 		<result property="prod_img2" column="prod_img2"/>
 		<result property="prod_img3" column="prod_img3"/>
 		<collection property="seller" resultMap="seller"></collection>
+		<collection property="deal" resultMap="deal"></collection>
 	</resultMap>
 	
 	<resultMap type="MemberVO" id="seller">
@@ -65,23 +66,32 @@
 	</resultMap>
 
 	<!-- 메인(index.jsp)상품 목록(일단, 최신순으로 카테고리/성별구분없이 설정함) -->
-	<select id="listMain" resultType="productVO">
-		select * from mfg_products
-		order by prod_date desc
+	<select id="listMain" resultMap="product">
+		select p.*
+		from mfg_products p join mfg_deal d
+		on p.prod_num = d.prod_num
+		where d.state != '거래후'
+		order by p.prod_date desc
 	</select>
 	
 	<!-- 메인에서 타고 들어가는 카테고리,성별 분류 없는 인기순 상품목록리스트 -->
-	<select id="listLike3" resultType="productVO">
-		select * from mfg_products
-		order by like_count desc
+	<select id="listLike3" resultMap="product">
+		select p.*
+		from mfg_products p join mfg_deal d
+		on p.prod_num = d.prod_num
+		where d.state != '거래후'
+		order by p.like_count desc
 		limit #{pageStart},#{perPageNum}
 	</select>
 	<!-- 메인에서 타고 들어가는 카테고리,성별 분류 없는 인기순 상품목록리스트 -->
 	
 	<!-- 메인에서 타고 들어가는 카테고리,성별 분류 없는 최신순 상품목록리스트 -->
-	<select id="listAll3" resultType="productVO">
-		select * from mfg_products
-		order by prod_date desc
+	<select id="listAll3" resultMap="product">
+		select p.*
+		from mfg_products p join mfg_deal d
+		on p.prod_num = d.prod_num
+		where d.state != '거래후'
+		order by p.prod_date desc
 		limit #{pageStart},#{perPageNum}
 	</select>
 	<!-- 메인에서 타고 들어가는 카테고리,성별 분류 없는 최신순 상품목록리스트 -->
@@ -98,10 +108,13 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = (select substring_index(roadFullAddr, ' ', 2)
 														 from mfg_member
 														 where user_id = #{user_id})
 		and p.category = #{category}
+		and d.state != '거래후'
 		order by p.prod_date desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -111,8 +124,11 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = #{addr}
 		and p.category = #{category}
+		and d.state != '거래후'
 		order by p.prod_date desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -127,11 +143,14 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = (select substring_index(roadFullAddr, ' ', 2)
 														 from mfg_member
 														 where user_id = #{user_id})
 		and p.category = #{category}
 		and p.gender = #{gender}
+		and d.state != '거래후'
 		order by p.prod_date desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -143,9 +162,12 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = #{addr}
 		and p.category = #{category}
 		and p.gender = #{gender}
+		and d.state != '거래후'
 		order by p.prod_date desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -156,10 +178,13 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = (select substring_index(roadFullAddr, ' ', 2)
 														 from mfg_member
 														 where user_id = #{user_id})
 		and p.category = #{category}
+		and d.state != '거래후'
 		order by p.like_count desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -169,8 +194,11 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = #{addr}
 		and p.category = #{category}
+		and d.state != '거래후'
 		order by p.like_count desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -180,11 +208,14 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = (select substring_index(roadFullAddr, ' ', 2)
 														 from mfg_member
 														 where user_id = #{user_id})
 		and p.category = #{category}
 		and p.gender = #{gender}
+		and d.state != '거래후'
 		order by p.like_count desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -194,9 +225,12 @@
 		select p.*
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = #{addr}
 		and p.category = #{category}
 		and p.gender = #{gender}
+		and d.state != '거래후'
 		order by p.like_count desc
 		limit #{pageStart},#{perPageNum}
 	</select>
@@ -206,10 +240,13 @@
 		select count(p.prod_num)
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = (select substring_index(roadFullAddr, ' ', 2)
 														 from mfg_member
 														 where user_id = #{user_id})
 		and p.category = #{category}
+		and d.state != '거래후'
 	</select>
 	
 	<!-- 5-1. 상품 개수(all) -->
@@ -217,8 +254,11 @@
 		select count(p.prod_num)
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = #{addr}
 		and p.category = #{category}
+		and d.state != '거래후'
 	</select>
 	
 	<!-- 6. 상품 개수(성별) -->
@@ -226,11 +266,14 @@
 		select count(p.prod_num)
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = (select substring_index(roadFullAddr, ' ', 2)
 														 from mfg_member
 														 where user_id = #{user_id})
 		and p.category = #{category}
 		and p.gender = #{gender}
+		and d.state != '거래후'
 	</select>
 	
 	<!-- 6-2. 상품 개수(성별) -->
@@ -238,16 +281,21 @@
 		select count(p.prod_num)
 		from mfg_products p join mfg_member m
 		on p.seller_id = m.user_id
+		join mfg_deal d
+		on p.prod_num = d.prod_num
 		where substring_index(m.roadFullAddr, ' ', 2) = #{addr}
 		and p.category = #{category}
 		and p.gender = #{gender}
+		and d.state != '거래후'
 	</select>
 	
 	
 	<!-- 메인  -> 인기순,최신순   -->
 	<select id="getTotalCnt3" resultType="Integer">
-		select count(*)
-		from mfg_products
+		select count(p.prod_num)
+		from mfg_products p join mfg_deal d
+		on p.prod_num = d.prod_num
+		where d.state != '거래후'
 	</select>
 	
 	<!-- 
@@ -305,6 +353,11 @@
 		insert into mfg_products (seller_id, prod_name, prod_img, price, detail, `condition`, category, gender, prod_img2, prod_img3)
 		values (#{seller_id}, #{prod_name}, #{prod_img}, #{price}, #{detail}, #{condition}, #{category}, #{gender}, #{prod_img2}, #{prod_img3})
 	</insert>
+	
+	<select id="insert2" resultType="ProductVO">
+		select * from mfg_products
+		where prod_img = #{prod_img}
+	</select>
 	
 	<!-- 상품 수정 GET  -->
 	<select id="read" resultType="ProductVO">

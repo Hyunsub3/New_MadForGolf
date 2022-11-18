@@ -5,12 +5,60 @@
   
 <mapper namespace="com.madforgolf.mapper.HomeMapper">
 
+	<resultMap type="ProductVO" id="product">
+		<id property="prod_num" column="prod_num" />
+		<result property="seller_id" column="seller_id"/>
+		<result property="buyer_id" column="buyer_id"/>
+		<result property="prod_name" column="prod_name"/>
+		<result property="prod_img" column="prod_img"/>
+		<result property="prod_date" column="prod_date"/>
+		<result property="price" column="price"/>
+		<result property="detail" column="detail"/>
+		<result property="condition" column="condition"/>
+		<result property="category" column="category"/>
+		<result property="like_count" column="like_count"/>
+		<result property="payment" column="payment"/>
+		<result property="gender" column="gender"/>
+		<result property="prod_img2" column="prod_img2"/>
+		<result property="prod_img3" column="prod_img3"/>
+		<collection property="seller" resultMap="seller"></collection>
+		<collection property="deal" resultMap="deal"></collection>
+	</resultMap>
+	
+	<resultMap type="MemberVO" id="seller">
+		<id property="user_id" column="user_id"/>
+		<result property="user_pw" column="user_pw"/>
+		<result property="user_name" column="user_name"/>
+		<result property="user_phone" column="user_phone"/>
+		<result property="reg_date" column="reg_date"/>
+		<result property="score" column="score"/>
+		<result property="latitude" column="latitude"/>
+		<result property="logitude" column="logitude"/>
+		<result property="roadFullAddr" column="roadFullAddr"/>
+	</resultMap>
+		
+	<resultMap type="DealVO" id="deal">
+		<id property="deal_num" column="deal_num"/>
+		<result property="seller_id" column="seller_id"/>
+		<result property="buyer_id" column="buyer_id"/>
+		<result property="prod_num" column="prod_num"/>
+		<result property="price" column="price"/>
+		<result property="state" column="state"/>
+		<result property="deal_date" column="deal_date"/>
+		<result property="review_count" column="review_count"/>
+	</resultMap>
+
 
 	<!-- 메인(index.jsp)상품 목록(일단, 최신순으로 카테고리/성별구분없이 설정함) -->
-	<select id="listMain" resultType="productVO">
-		select * from mfg_products
-		order by like_count desc
-	</select>
 	
+	<select id="listMain" resultMap="product">
+		select p.*
+		from mfg_products p join mfg_deal d
+		on p.prod_num = d.prod_num
+		where d.state != '거래후'
+		order by p.prod_date desc
+	</select>
+
+
 
 </mapper>

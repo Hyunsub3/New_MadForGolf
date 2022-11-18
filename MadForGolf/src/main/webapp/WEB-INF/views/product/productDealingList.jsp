@@ -131,6 +131,13 @@
 	}
 		
 }
+
+
+@media only screen and (max-width: 414px) { /* 414*896  */
+	.table th{
+		font-size: 14px !important;
+	}
+}
 </style>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -157,8 +164,7 @@
      <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(${pageContext.request.contextPath }/resources/img/bg-img/24.jpg);">
-            <h2>거래목록</h2>
+<div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/resources/img/bg-img/background-img (4).jpg');">            <h2>거래목록</h2>
          <%--    <a style="color: white;">${DealingProductList }</a> --%>
         </div>
 
@@ -205,7 +211,7 @@
 			<c:forEach var="dealing" items="${DealingProductList }"> 
 				<tr>
 					<td>${dealing.deal_date }</td>
-					<td><a href="/product/productDetail?prod_num=${dealing.product.prod_num}">${dealing.product.prod_name }</a></td>
+					<td><a href="/product/productDetail?prod_num=${dealing.deal_num}">${dealing.product.prod_name }</a></td>
 					<td>${dealing.product.price }</td>
 					<td>
 					<input class="category_btn1" type="button" id="deal" value="${dealing.state }">

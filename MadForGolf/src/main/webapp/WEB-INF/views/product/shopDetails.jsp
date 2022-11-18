@@ -24,25 +24,27 @@
 @media only screen and (max-width: 767px) {
 	#contextBox{
 		margin: 0px auto !important;
+		width: 380px !important;
 	}
 	
 	#span{
-		margin-right:30px !important; margin-left:65px !important;
-		
+		margin-right:30px !important; margin-left:34px !important;
 		font-size: 60px !important;
 		color: black !important;
+		
 	}
 	
 	#kakaoImg{
-		margin-left: 60px !important;
+		margin-left: 35px !important;
 	}
 	
 	#deal{
-		margin-left:55px !important;
+		margin-left:25px !important;
 	}
 	
 	#title{
 		text-align:center;
+		margin-right: 10px;
 	}
 	
 	#price{
@@ -53,6 +55,13 @@
 		text-align:center;
 	}
 	
+}
+
+@media only screen and (max-width: 414px) { /* 414*896  */
+	#button2{
+		width:100px !important;
+		margin: 8px auto;
+	}
 }
 /* ==================================미디어쿼리===================================== */
 	#p{
@@ -318,7 +327,7 @@ $(document).ready(function(){
 				$.ajax({
 					url: "/product/chattingNum",
 			        async: false,
-					data: {"chattingNum":chattingNum, "talker1_id":talker1_id, "talker2_id":talker2_id},
+					data: {"chattingNum":chattingNum, "talker1_id":userid1, "talker2_id":userid2},
 					success: function(chattingNum){
 						alert("성공");
 						alert(chattingNum);
