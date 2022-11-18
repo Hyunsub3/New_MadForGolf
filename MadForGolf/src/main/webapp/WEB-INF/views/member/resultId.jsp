@@ -39,20 +39,17 @@
 							<div class="row">
 								<div class="col-12 mb-4">
 									<label for="user_name">찾으시는 아이디는 ${user_id }입니다.</label> 
-									<br><br>
-								</div>
-								<%-- <div>
-								<a class="action remind" href="${pageContext.request.contextPath }/member/findPw"><span>Forgot Your Password?</span></a>
-								<br><br>
-								</div> --%>
+									<br><br><br>
+								
+								
 								<div>
-									<a class="action remind" href="${pageContext.request.contextPath }/member/login"><span>Go To Login</span></a>
-									<br><br>
+									<a class="action remind" href="${pageContext.request.contextPath }/member/login"><span>Go To Login</span></a><br>
 								</div>
 								<div>
 									<a class="action remind" href="${pageContext.request.contextPath }/member/findPw"><span>Forgot Your Password?</span></a><br>
 								</div>
-								</div>
+							</div>
+						</div>
 						
 					</div>
 				</div>

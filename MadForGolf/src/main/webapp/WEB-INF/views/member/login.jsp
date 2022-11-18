@@ -10,6 +10,12 @@
 	display:grid;
 	margin:0px auto;
 }
+
+@media only screen and (max-width: 767px){
+	.container {
+	width:70%;
+	}
+}
 </style>
 
 <!-- ##### Breadcrumb Area Start ##### -->

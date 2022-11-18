@@ -67,7 +67,7 @@
         top: 0;
         height: 100%;
         padding: 0 5px 0 10px;
-        background-color: #FBF2CF;
+        background-color: #DEDEDE;
         -webkit-border-radius: 0 2px 2px 0;
            -moz-border-radius: 0 2px 2px 0;
             -ms-border-radius: 0 2px 2px 0;
@@ -81,7 +81,7 @@
         top: 50%;
         left: -3px;
         margin-top: -3px;
-        background-color: #FBF2CF;
+        background-color: #DEDEDE;
         -webkit-transform: rotate(45deg);
            -moz-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
@@ -209,7 +209,7 @@
                         <div class="col-md-6 mb-4">
                                 <div class="single-benefits-area" onClick="location.href='/mypage/accountbookMonth'">
                                     <a href="/mypage/accountbookMonth"><img src="${pageContext.request.contextPath }/resources/img/core-img/b3.png" alt=""></a>
-                                    <a href="/mypage/accountbookMonth"><h5>가계부</h5></a>
+                                    <a href="/mypage/accountbookMonth"><h5>골프 지갑</h5></a>
                                     <a href="/mypage/accountbookMonth"><p>월 별 구매, 판매 내역을 확인할 수 있는 공간입니다.</p></a>
                                 </div>
                             </div>
@@ -226,7 +226,7 @@
                             <!-- 찜 목록 -->
                          <div class="col-md-6 mb-4">
                                 <div class="single-benefits-area" onClick="location.href='/mypage/likeListAll'">
-                                    <a href="/mypage/likeListAll"><img src="${pageContext.request.contextPath }/resources/img/core-img/b2.png" alt=""></a>
+                                    <a href="/mypage/likeListAll"><img src="${pageContext.request.contextPath }/resources/img/core-img/b1.png" alt=""></a>
                                      <a href="/mypage/likeListAll"><h5>찜 목록</h5></a>
                                      <a href="/mypage/likeListAll"><p>내가 찜한 상품을 확인할 수 있는 공간입니다. </p></a>
                                 </div>
@@ -235,7 +235,7 @@
                             <!-- 채팅 목록 -->
                            <div class="col-md-6 mb-4">
                                 <div class="single-benefits-area" onClick="location.href='/product/chattingList'">
-                                    <a href="/product/chattingList"><img src="${pageContext.request.contextPath }/resources/img/core-img/b3.png" alt=""></a>
+                                    <a href="/product/chattingList"><img src="${pageContext.request.contextPath }/resources/img/core-img/b2.png" alt=""></a>
                                      <a href="/product/chattingList"><h5>채팅 목록</h5></a>
                                      <a href="/product/chattingList"><p>나의 채팅 목록을 확인할 수 있는 공간입니다. </p></a>
                                 </div>
@@ -245,7 +245,7 @@
                             <!-- 지역 인증 -->
                          <div class="col-md-6 mb-4">
                                 <div class="single-benefits-area" onClick="location.href='/member/address'">
-                                    <a href="/member/address"><img src="${pageContext.request.contextPath }/resources/img/core-img/b4.png" alt=""></a>
+                                    <a href="/member/address"><img src="${pageContext.request.contextPath }/resources/img/core-img/b3.png" alt=""></a>
                                      <a href="/member/address"><h5>지역 인증</h5></a>
                                      <a href="/member/address"><p>나의 지역을 인증할 수 있는 공간입니다. </p></a>
                                 </div>
@@ -254,7 +254,7 @@
                             <!-- 상품 등록 -->
                            <div class="col-md-6 mb-4">
                                 <div class="single-benefits-area" onClick="location.href='/product/productInsert'">
-                                    <a href="/product/productInsert"><img src="${pageContext.request.contextPath }/resources/img/core-img/b1.png" alt=""></a>
+                                    <a href="/product/productInsert"><img src="${pageContext.request.contextPath }/resources/img/core-img/b4.png" alt=""></a>
                                      <a href="/product/productInsert"><h5>상품 등록</h5></a>
                                      <a href="/product/productInsert"><p>상품을 등록할 수 있는 공간입니다. </p></a>
                                 </div>
@@ -263,7 +263,7 @@
                             <!-- 회원 탈퇴 -->
                            <div class="col-md-6 mb-4">
                                 <div class="single-benefits-area" onClick="location.href='/member/delete'">
-                                    <a href="/member/delete"><img src="${pageContext.request.contextPath }/resources/img/core-img/b2.png" alt=""></a>
+                                    <a href="/member/delete"><img src="${pageContext.request.contextPath }/resources/img/core-img/b1.png" alt=""></a>
                                      <a href="/member/delete"><h5>회원 탈퇴</h5></a>
                                      <a href="/member/delete"><p>정말 탈퇴하시겠습니까? </p></a>
                                 </div>
