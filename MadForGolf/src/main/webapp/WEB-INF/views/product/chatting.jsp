@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/_reset.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/_common.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/chatting.css">
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/chatting.css"> --%>
 
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/talkplus-js-0.2.17.js" ></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
@@ -143,10 +143,100 @@ $(document).ready(function(){
 });
 
 </script>
-</head>
-<body>
-<!-- <div class="wrap" id="wrap"> -->
+<style>
+@charset "UTF-8";
 
+@import url("https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800");
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+body{
+    font-family: "Dosis", "S-CoreDream-3Light";
+	height: 880px !important;
+	width: 430px !important;
+}
+#chat-wrap{
+/*  	border : 5px solid blue;  */
+	height: 100%;
+	width: 100%;
+	padding-bottom: 0px;
+}
+#chat-wrap-inner{
+/*  	border : 5px solid red ;  */
+	height: 100% !important;
+	width: 100% !important;
+	padding: 0 !important;
+	margin: 0px;
+}
+#chat-container{
+/*  	border : 5px solid green;  */
+	height: 87%;
+	width: 96%;
+	margin-bottom: 0px !important;
+
+}
+#chat-title{
+/*  	border : 5px solid yellow;  */
+ 	height: 5%;
+	width: 100% !important;
+	color: #FBF2CF;
+	font-weight: bold;
+	font-family: "Dosis", "S-CoreDream-3Light";
+	padding: 5px 0;
+	background-color: #52734D;
+	font-size: 25px;
+}
+#chatView{
+/*  	border : 5px solid purple;  */
+	height: 92%;
+	width: 98%;
+	margin: 0;
+}
+#message-area{
+/*  	border : 5px solid blue;  */
+	width: 98%;
+	font-size: 10px !important;
+	color: red;
+}
+#message-write-area{
+/*  	border : 5px solid black;  */
+ 	width: 95%;
+ 	height: 5%;
+ 	margin: 0px;
+ 	
+}
+#message-write-inner{
+/* 	border : 5px solid yellow; */
+	display: flex;
+ 	flex-flow: row nowrap;
+ 	justify-content: flex-start;
+ 	padding: 0px;
+ 	width: 100%;
+ 	margin: 0px;
+}
+#write-box{
+/* 	border : 5px solid red;  */
+	width: 80%;
+	height: 100%;
+	margin: 0px;
+}
+#enterMessage{
+    font-family: "Dosis", "S-CoreDream-3Light";
+	width: 100%;
+	height: 80%;
+	font-size: 15px;
+}
+
+</style>
+</head>
+<body onresize="parent.resizeTo(450,900)" onload="parent.resizeTo(450,900)">
+<!-- <div class="wrap" id="wrap"> -->
 
 	<main class="chat-wrap" style="flex:none; width:auto; padding: 0px;">
 		<div class="chat-wrap-inner" style="width:520px; margin:0px; padding-bottom:0px;">
