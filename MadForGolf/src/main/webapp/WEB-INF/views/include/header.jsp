@@ -141,7 +141,7 @@
 <!--                                         <ul class="dropdown"> -->
                                             <li><a href="/product/listAll?category=Driver">Driver</a></li>
                                             <li><a href="/product/listAll?category=Iron">Iron</a></li>
-                                            <li><a href="/product/listAll?category=Util">Util</a></li>
+                                            <li><a href="/product/listAll?category=Utility">Utility</a></li>
                                             <li><a href="/product/listAll?category=Wedge">Wedge</a></li>
 <!-- 											<li><a href="/product/listAll?category=Putter">Putter</a></li> -->
 <!-- 											<li><a href="/product/listAll?category=Etc">Etc</a></li> -->

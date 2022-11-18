@@ -1,7 +1,8 @@
 package com.madforgolf.controller;
 
 import java.io.File;
-
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -480,7 +481,7 @@ public class ProductController {
 			log.info("fileList" + fileList);
 			
 			// 파일 업로드
-			//String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf3\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
+			String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf3\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
 			// 속도가 느려 초반에 엑박뜸 and 경로 일치 필요 => but, 깃허브 연동 o
 			String uploadFolder2 = request.getServletContext().getRealPath("resources/product_img");
 			// 메서드를 통한 경로 => 속도가 빠름, 경로 일치 불필요 => but, 깃허브 연동 x
@@ -488,12 +489,12 @@ public class ProductController {
 			// => 둘 다 필요
 			
 			// 파일 생성
-			//File file1 = new File(uploadFolder1 + "\\" + uFileName);
+			File file1 = new File(uploadFolder1 + "\\" + uFileName);
 			File file2 = new File(uploadFolder2 + "\\" + uFileName);
 				
 			if(mFile.getSize() != 0) { // 첨부파일이 있을 때				
 				mFile.transferTo(file2); // 첨부파일로 전달된 정보를 파일로 전달
-				//Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
+				Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
 				log.info("파일 업로드 성공");
 			} // if
 			
