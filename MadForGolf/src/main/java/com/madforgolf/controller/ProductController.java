@@ -414,13 +414,13 @@ public class ProductController {
 		// 업로드 파일 처리
 		fileProcess(multi, vo, request);
 		
-		service.productInsert(vo);
+		ProductVO vo2 = service.productInsert(vo);
 
-		log.info("******* vo : "+vo);
+		log.info("******* vo2 : "+ vo2);
 		
 //		model.addAttribute("ProductVo", vo);
 		
-		redirect.addFlashAttribute("ProductVo", vo);
+		redirect.addFlashAttribute("ProductVo", vo2);
 		
 		return "redirect:/deal/insertDeal";
 	}
@@ -995,7 +995,7 @@ public class ProductController {
 			log.info("chattingGET() 호출");
 			log.info("vo : " + vo);
 			
-			ChattingVO vo2 = service2.chattingSelect(vo); // 왜 null 이 뜨지???
+			ChattingVO vo2 = service2.chattingSelect(vo);
 			log.info("vo2 : " + vo2);
 			model.addAttribute("vo", vo2);
 		}

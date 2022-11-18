@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/_reset.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/_common.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/chatting.css">
 
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/talkplus-js-0.2.17.js" ></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 <script type="text/javascript">
+window.resizeTo(540, 670);
 
 var DEMO_CHANNEL_ID = "${vo.chattingNum }";
 
@@ -143,120 +145,19 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div class="wrap" style="min-width: 420px; min-height:800px;">
-<!-- 	<section class="menu-section"> -->
-<!-- 		<h1> -->
-<!-- 			<a href="https://www.talkplus.io/intro/" target="_blank"> -->
-<!-- 				<img src="./images/logo.svg" alt="logo" /> -->
-<!-- 			</a> -->
-<!-- 		</h1> -->
-<!-- 		<div class="user-box"> -->
-<!-- 			<img class="user-img" src="./images/user_0.png" alt="user image" /> -->
-<!-- 			<div class="name"> addClass : active -->
-<!-- 				<input type="text" value="제임스" /> -->
-<!-- 			</div> -->
-<!-- 			<a href="javascript:void(0);" class="btn-alter"></a> -->
-<!-- 		</div> -->
-<!-- 		<div id="chatName"></div> -->
-<!-- 		<nav class="menu"> -->
-<!-- 			<ul> -->
-<!-- 				<li class="active"><a id="active" href="javascript:void(0);">소셜채팅</a></li> -->
-<!-- 				<li><a href="javascript:void(0);">게임/방송채팅</a></li> -->
-<!-- 			</ul> -->
-<!-- 		</nav> -->
-<!-- 		<!-- resource btns -->
-<!-- 		<ul class="resource-box"> -->
-<!-- 			<li><a href="javascript:void(0);" class="btn" /><img src="./images/icon_resource1.png" />Resource</a></li> -->
-<!-- 			<li><a href="javascript:void(0);" class="btn" /><img src="./images/icon_resource2.png" />Resource</a></li> -->
-<!-- 		</ul> -->
-<!-- 		-->
-<!-- 	</section> -->
+<!-- <div class="wrap" id="wrap"> -->
 
 
 	<main class="chat-wrap" style="flex:none; width:auto; padding: 0px;">
 		<div class="chat-wrap-inner" style="width:520px; margin:0px; padding-bottom:0px;">
-			<div class="chat-container">
+			<div class="chat-container" id="chat-container">
 				<h2 class="chat-title">Mad for Golf</h2>
 				<!-- chat-area -->
 				<div class="chat-area" id="chatView">
 					<div class="date"></div>
-<!-- 					<div class="notibox"> -->
-<!-- 						<span>채팅방 운영정책 및 공지를 입력할 수 있는 영역입니다</span> -->
-<!-- 					</div> -->
 					<!-- message-area -->
 					<div class="message-area">
-						<!--<div class="message-list avatar">
-							<div class="avatar-image"><img src="./images/user_1.png" /></div>
-							<div class="message-box">
-								<div class="avatar-name">톡플러스</div>
-								<div class="message-time">
-									<div class="message-text">발송메시지 영역</div>
-									<div class="timestamps">오후 00:00</div>
-								</div>
-							</div>
-						</div>
-						<div class="message-list wirter">
-							<div class="message-box">
-								<div class="message-time">
-									<div class="timestamps">오후 00:00</div>
-									<div class="message-text">발송메시지 영역</div>
-								</div>
-							</div>
-						</div>
-						-->
-						<!--<div class="message-list avatar">
-							<div class="avatar-image"><img src="./images/user_1.png" /></div>
-							<div class="message-box">
-								<div class="avatar-name">톡플러스</div>
-								<div class="message-time">
-									<div class="file-area file">
-										<a href="javascript:void(0);">
-											<sapn class="fileName">톡플러스 샘플파일.txt</sapn>
-											<sapn class="fileSize">용량 : 15MB</sapn>
-											<sapn class="filedown"></sapn>
-										</a>
-									</div>
-									<div class="timestamps">오후 00:00</div>
-								</div>
-							</div>
-						</div>-->
-						<!--<div class="message-list wirter">
-							<div class="message-box">
-								<div class="message-time">
-									<div class="timestamps">오후 00:00</div>
-									<div class="file-area picture">
-										<a href="https://www.w3schools.com/tags/img_girl.jpg"><img src="https://www.w3schools.com/tags/img_girl.jpg" /></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>-->
-						<!--<div class="message-list wirter">
-							<div class="message-box">
-								<div class="message-time">
-									<div class="timestamps">오후 00:00</div>
-									<div class="file-area video">
-										<video width="384" controls>
-											<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-										</video>
-									</div>
-								</div>
-							</div>
-						</div>-->
-						<!--<div class="message-list wirter">
-							<div class="message-box">
-								<div class="message-time">
-									<div class="timestamps">오후 00:00</div>
-									<div class="file-area file">
-										<a href="javascript:void(0);">
-											<sapn class="fileName">톡플러스 샘플파일.txt</sapn>
-											<sapn class="fileSize">용량 : 15MB</sapn>
-											<sapn class="filedown"></sapn>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>-->
+						
 					</div>
 					<!-- //message-area -->
 				</div>
@@ -264,22 +165,6 @@ $(document).ready(function(){
 				<!-- message-write-area -->
 				<div class="message-write-area">
 					<div class="message-write-inner">
-						<div class="btn-attach">
-							<a href="javascript:void(0);"></a>
-						</div>
-						<div class="attach-box">
-							<ul>
-								<li>
-									<a class="attach pic" href="javascript:void(0);">사진첨부</a>
-								</li>
-								<li>
-									<a class="attach video" href="javascript:void(0);">동영상 첨부</a>
-								</li>
-								<li>
-									<a class="attach file" href="javascript:void(0);">파일첨부</a>
-								</li>
-							</ul>
-						</div>
 						<div class="write-box">
 							<input type="text" class="enterMessage" placeholder="메시지를 입력해주세요.">
 						</div>
@@ -290,9 +175,8 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</main>
-</div>
+<!-- </div> -->
 
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/index2.js" type="module"></script>
-
 </body>
 </html>

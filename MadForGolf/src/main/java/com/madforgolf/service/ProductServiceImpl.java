@@ -110,10 +110,10 @@ public class ProductServiceImpl implements ProductService {
 	 * dao.getProductDetail(vo); }
 	 */
 	@Override
-	public void productInsert(ProductVO vo) throws Exception {
+	public ProductVO productInsert(ProductVO vo) throws Exception {
 		log.info("productInsert(vo) 호출");
 
-		dao.insertProduct(vo);
+		return dao.insertProduct(vo);
 	}
 	
 

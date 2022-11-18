@@ -44,6 +44,7 @@ public class DealController {
 		dealVo.setSeller_id(productVo.getSeller_id());
 		dealVo.setPrice(productVo.getPrice());
 		dealVo.setState("거래전");
+		dealVo.setProd_num(productVo.getProd_num());
 		
 		log.info(productVo.getSeller_id());
 		
