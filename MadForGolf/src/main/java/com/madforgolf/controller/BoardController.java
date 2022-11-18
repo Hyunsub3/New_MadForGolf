@@ -1,7 +1,8 @@
 package com.madforgolf.controller;
 
 import java.io.File;
-
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -191,6 +192,8 @@ public class BoardController {
 			log.info("fileList" + fileList);
 			
 			
+
+			
 			//파일 저장위치
 //			String uploadFolder1 = "C:\\Users\\Hazle_dandan\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\board_file";
 			String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\board_file";
@@ -199,7 +202,7 @@ public class BoardController {
 
 			String uploadFolder2 = request.getServletContext().getRealPath("resources/board_file");
 			// 메서드를 통한 경로 => 업로드 속도가 빠름, 경로 일치 불필요 => but, 깃허브 연동 x
-			// 파일 저장 경로 : D:\workspace_sts6\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MadForGolf\resources\product_img
+			// 파일 저장 경로 : D:\workspace_sts6\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MadForGolf\resources\board_file
 			// => 둘 다 필요
 			//파일 이름 저장
 			fileList.add(ofileName);
@@ -218,8 +221,10 @@ public class BoardController {
 				//첨부파일 업로드
 //				mfile.transferTo(file1);
 				mfile.transferTo(file2);
+				Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
 				log.info("파일 업로드 성공");
 			}//if문 종료
+			
 		}//while문 종료
 		
 		//2,3번째 파일이 없을 경우 빈 문자열 입력
@@ -476,6 +481,8 @@ public class BoardController {
 						//첨부파일 업로드
 	//					mfile.transferTo(file1);
 						mfile.transferTo(file2);
+						Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
+
 						log.info("파일 업로드 성공");
 					}//if문 종료
 				}// if(oFilename)

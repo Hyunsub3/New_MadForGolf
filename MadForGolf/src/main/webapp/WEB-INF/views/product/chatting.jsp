@@ -144,7 +144,7 @@ $(document).ready(function(){
 
 </script>
 <style>
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 @import url("https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800");
 
@@ -161,104 +161,126 @@ body{
 	height: 880px !important;
 	width: 430px !important;
 }
+::selection{
+ 	color: #FEFFDE;
+	background-color: red;
+ 	background-color: #A1C298;
+}
 #chat-wrap{
-/*  	border : 5px solid blue;  */
+/*    	border : 5px solid blue;    */
 	height: 100%;
 	width: 100%;
 	padding-bottom: 0px;
 }
 #chat-wrap-inner{
-/*  	border : 5px solid red ;  */
+/*    	border : 5px solid red ;    */
 	height: 100% !important;
 	width: 100% !important;
 	padding: 0 !important;
 	margin: 0px;
 }
 #chat-container{
-/*  	border : 5px solid green;  */
+/*    	border : 5px solid green;    */
 	height: 87%;
-	width: 96%;
+	width: 100%;
 	margin-bottom: 0px !important;
 
 }
 #chat-title{
-/*  	border : 5px solid yellow;  */
+/*    	border : 5px solid yellow;    */
  	height: 5%;
 	width: 100% !important;
 	color: #FBF2CF;
 	font-weight: bold;
 	font-family: "Dosis", "S-CoreDream-3Light";
-	padding: 5px 0;
+	padding: 13px 0 5px 0;
 	background-color: #52734D;
 	font-size: 25px;
 }
 #chatView{
-/*  	border : 5px solid purple;  */
+/*    	border : 5px solid purple;    */
 	height: 92%;
-	width: 98%;
+	width: 100%;
 	margin: 0;
 }
 #message-area{
-/*  	border : 5px solid blue;  */
-	width: 98%;
+/*    	border : 5px solid blue;    */
+	width: 100%;
 	font-size: 10px !important;
-	color: red;
+	color: red !important;
+	
 }
 #message-write-area{
-/*  	border : 5px solid black;  */
- 	width: 95%;
- 	height: 5%;
+/*     	border : 5px solid black;     */
+ 	width: 100% !important;
+ 	height: 5%;                                 
  	margin: 0px;
  	
 }
 #message-write-inner{
-/* 	border : 5px solid yellow; */
-	display: flex;
- 	flex-flow: row nowrap;
- 	justify-content: flex-start;
+/*   	border : 5px solid yellow;   */
+	display: flex !important;
+ 	flex-flow: row nowrap !important;
+ 	justify-content: flex-start !important;
  	padding: 0px;
  	width: 100%;
  	margin: 0px;
 }
 #write-box{
-/* 	border : 5px solid red;  */
-	width: 80%;
+/*   	border : 5px solid red;    */
+	width: 70%;
 	height: 100%;
-	margin: 0px;
+	margin:0 0 0 20px;
+	
 }
 #enterMessage{
     font-family: "Dosis", "S-CoreDream-3Light";
 	width: 100%;
-	height: 80%;
+	height: 90%;
 	font-size: 15px;
+}
+#btnEnterMessage{
+/*   	border : 5px solid red;   */
+  	color: white;
+  	background-color: #91C788;
+  	border-radius: 18px;
+  	padding: 10px 17px;
+  	line-height: 36px;
+	height: 36px;
+	width: 60px;
+	margin-left: 20px;
 }
 
 </style>
 </head>
-<body onresize="parent.resizeTo(450,900)" onload="parent.resizeTo(450,900)">
+<body onresize="parent.resizeTo(448,950)" onload="parent.resizeTo(448,950)">
 <!-- <div class="wrap" id="wrap"> -->
 
-	<main class="chat-wrap" style="flex:none; width:auto; padding: 0px;">
-		<div class="chat-wrap-inner" style="width:520px; margin:0px; padding-bottom:0px;">
+	<main class="chat-wrap" id="chat-wrap"style="flex:none; width:auto; padding: 0px;">
+		<div class="chat-wrap-inner" id="chat-wrap-inner" style="width:520px; margin:0px; padding-bottom:0px;">
+		
 			<div class="chat-container" id="chat-container">
-				<h2 class="chat-title">Mad for Golf</h2>
+				<h2 class="chat-title" id="chat-title">Mad for Golf</h2>
 				<!-- chat-area -->
 				<div class="chat-area" id="chatView">
 					<div class="date"></div>
 					<!-- message-area -->
-					<div class="message-area">
+					<div class="message-area" id="message-area">
 						
 					</div>
 					<!-- //message-area -->
 				</div>
 				<!-- //chat-area -->
 				<!-- message-write-area -->
-				<div class="message-write-area">
-					<div class="message-write-inner">
-						<div class="write-box">
-							<input type="text" class="enterMessage" placeholder="메시지를 입력해주세요.">
+				<div class="message-write-area" id="message-write-area">
+					<div class="message-write-inner" id="message-write-inner">
+						<div class="write-box" id="write-box">
+							<input type="text" class="enterMessage" id="enterMessage" placeholder="메시지를 입력해주세요.">
 						</div>
-						<a class="btn-send" id="btnEnterMessage" href="javascript:void(0);">전송</a>
+						<div>
+<!-- 						<a class="btn-send" id="btnEnterMessage" href="javascript:void(0);">전송</a> -->
+						<a id="btnEnterMessage" href="javascript:void(0);">전송</a>
+						</div>
 					</div>
 				</div>
 				<!-- //message-write-area -->

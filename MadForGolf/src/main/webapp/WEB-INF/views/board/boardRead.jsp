@@ -7,6 +7,14 @@
 <!-- header -->
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800");
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
 .container_box{
 /*  	border: 5px solid black; */
 	background-color: #f9f9f9;
@@ -193,6 +201,12 @@ comment-head{
 	border: 1px solid #C6EBC5;
 	
 }
+#text{
+	font-size: 20px;
+  	font-family: "Dosis", "S-CoreDream-3Light";
+  	line-height: 200%;
+	white-space:pre-wrap;
+}
 
 
 
@@ -269,7 +283,7 @@ comment-head{
 							
 							<!-- 게시글 본문 -->
 							<div class=" mb-30 content_box">
-								<div class="content_inner_box" style="margin-bottom: 80px; margin-top: 40px;"><pre>${vo.content }</pre></div>
+								<div class="content_inner_box" style="margin-bottom: 80px; margin-top: 40px;"><pre id="text">${vo.content }</pre></div>
 								<div class="img_box">
 									 <div class="img">
 	                                   	<img  src="${pageContext.request.contextPath }/resources/board_file/${vo.content_img }"alt="1">

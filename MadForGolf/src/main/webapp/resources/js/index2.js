@@ -238,13 +238,13 @@ function setupUsernameInputEventListener() {
 				} else if (errResp.code === '2008') { // if user already had joined channel before, don't worry about error
 					// don't handle
 				} else {
-					return alert("채널만들기"+JSON.stringify(errResp));
+					return console.log("채널만들기"+JSON.stringify(errResp));
 				}
 			}
 
 			client.getMessages({channelId: DEMO_CHANNEL_ID}, function (errResp, data) {
 				if (errResp) {
-					return alert("@@@@@"+JSON.stringify(errResp));
+					return console.log("@@@@@"+JSON.stringify(errResp));
 				}
 				populateChatWindowWithMessages(data.messages);
 			});
