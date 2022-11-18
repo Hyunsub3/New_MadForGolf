@@ -27,6 +27,11 @@
 	paddig-left:300px;
 }
 
+.img-container{
+	width:500px;
+	height:500px;
+}
+
 .table-box{
 	font-size:18px;
 	text-align:center;
@@ -45,8 +50,13 @@
 }
 
 @media only screen and (max-width: 767px){
-	.container {
-	width:90%;
+	.img-container{
+		width:300px;
+		height:300px;
+	}
+	.chart-container{
+		width:300px;
+		height:500px;
 	}
 }
 </style>
@@ -55,7 +65,7 @@
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
         <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(${pageContext.request.contextPath }/resources/img/bg-img/golf-2704608.jpg);">
-            <h2>My Account Book</h2>
+            <h2>My Golf Wallet</h2>
         </div>
         
         <div class="container">
@@ -65,7 +75,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Home</a></li>
                             <li class="breadcrumb-item"><a href="/member/mypage"> Mypage </a>
-                            <li class="breadcrumb-item active" aria-current="page">My Account Book</li>
+                            <li class="breadcrumb-item active" aria-current="page">My Golf Wallet</li>
                         </ol>
                     </nav>
                 </div>
@@ -77,8 +87,8 @@
 	<section class="about-us-area">
 		<div class="container">
 			<div class="section-heading text-center">
-				<h2>My Account Book</h2>
-				<p>${user_name }님의 가계부</p>
+				<h2>My Golf Wallet</h2>
+				<p>${user_name }님의 Golf Wallet</p>
 			</div>
 	
 			<!-- 선 -->
