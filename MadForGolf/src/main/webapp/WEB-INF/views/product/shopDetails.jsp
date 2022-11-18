@@ -20,6 +20,9 @@
 	cursor: pointer;
 	border: 1px solid;
 }
+
+
+      
 /* ==================================미디어쿼리===================================== */
 @media only screen and (max-width: 767px) {
 	#contextBox{
@@ -72,7 +75,8 @@
 	
 	#span{
 		font-size: 20px !important;
-		color: black !important;
+ 		color: black !important;
+/* 		color: black !important; */
 	}
 	
 	#deal{
@@ -82,6 +86,8 @@
 		width: 70px;
 	
 	}
+
+	
 
 </style>
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js"
@@ -329,9 +335,9 @@ $(document).ready(function(){
 			        async: false,
 					data: {"chattingNum":chattingNum, "talker1_id":userid1, "talker2_id":userid2},
 					success: function(chattingNum){
-						alert("성공");
-						alert(chattingNum);
-						window.open("/product/chatting?chattingNum="+chattingNum+"", "Mad for Golf", "menubar=no, toolbar=no, location=no, status=no, scrollbars=no, width=200");
+// 						alert("성공");
+// 						alert(chattingNum);
+						window.open("/product/chatting?chattingNum="+chattingNum+"", "Mad for Golf", "menubar=no, toolbar=no, location=no, status=no, resizable=no, scrollbars=no, width=200");
 						},
 					error: function(){
 						alert("실패");
@@ -555,7 +561,8 @@ $(document).ready(function(){
 
                             <div class="products--meta">
                                 <!--판매자 정보 페이지 연결 -->
-                                <p id="p"><span id="span">Seller:</span> <span><a href="${pageContext.request.contextPath }/product/seller?prod_num=${deal.product.prod_num } " id="span">${deal.product.seller_id }</a></span></p>
+                                <p id="p" class="seller"><span id="span">Seller:</span> <span ><a class="seller" href="${pageContext.request.contextPath }/product/seller?prod_num=${deal.product.prod_num } " id="span">${deal.product.seller_id }</a></span></p>
+<!--                                 <div id="seller-text"> 판매자를 클릭하면 상세 판매 정보를 보실 수 있습니다. </div> -->
                                 <!--판매자 정보 페이지 연결 -->
                                 <p id="p"><span id="span">Condition:</span> <span id="span">${deal.product.condition }</span></p>
                                 <p id="p"><span id="span">Gender:</span> <span id="span"><c:if test="${deal.product.gender eq 1}">남</c:if><c:if test="${deal.product.gender eq 2}">여</c:if></span></p>
