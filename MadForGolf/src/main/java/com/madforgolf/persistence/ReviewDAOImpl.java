@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.madforgolf.domain.MemberVO;
+import com.madforgolf.domain.PageMakerVO;
 import com.madforgolf.domain.ReviewVO;
 
 @Repository
@@ -58,10 +59,20 @@ public class ReviewDAOImpl implements ReviewDAO{
 
 	
 	// 리뷰 목록 (상품 번호로) 가져오기
-	@Override
-	public List<ReviewVO> getReviewListAll(String seller_id) throws Exception {
-		return sqlSession.selectList(NAMESPACE+".getReviewListAll", seller_id);
-	}
+		@Override
+		public List<ReviewVO> getReviewListAll(String seller_id, PageMakerVO pm) throws Exception {
+			
+			Map<String, Object> hashMap = new HashMap<String, Object>();
+			
+			hashMap.put("seller_id", seller_id);
+			hashMap.put("startRow", pm.getStartRow());
+			hashMap.put("perPageNum", pm.getVo().getPerPageNum());
+
+			log.info(pm.getStartPage()+"");
+			log.info(pm.getVo().getPerPageNum()+"");
+			return sqlSession.selectList(NAMESPACE+".getReviewListAll", hashMap);
+
+		}
 
 	// 페이징 처리
 	@Override

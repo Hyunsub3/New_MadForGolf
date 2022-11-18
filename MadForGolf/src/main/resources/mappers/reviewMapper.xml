@@ -68,7 +68,8 @@
 			from mfg_review r join mfg_products p
 			on r.prod_num = p.prod_num
 			where p.seller_id = #{seller_id }
-			order by review_date desc
+			order by review_date desc 
+			limit #{startRow},#{perPageNum}  
 		</select>
 		
 		<!-- 페이징 처리 -->
@@ -76,7 +77,7 @@
 			select count(r.review_num)
 			from mfg_review r join mfg_products p
 			on r.prod_num = p.prod_num
-			where p.seller_id = #{seller_id }
+			where p.seller_id = #{seller_id }          
 		</select>
 		
 		<!-- 판매 상품 리뷰 상세 조회 -->

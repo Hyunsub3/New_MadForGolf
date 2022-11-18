@@ -23,9 +23,9 @@
 
 .chart-container{
 	width:500px;
-	height:800px;
-	margin:0px auto;
-	positon:realtive
+	height:700px;
+	margin:0 auto;
+	positon:realtive;
 }
 
 .content-container{
@@ -78,17 +78,20 @@
 		width: 90%;
 	}
 	.table-box{
-		padding-top : 5%;
-		padding-left : 5%;
-		text-align: center;
-	
- 	}
+		width:100%;
+	}
 	.col-12{
 
 	
 	}
 	.img-container{
 		main-item:50%;
+	}
+	.chart-container{
+	width:80vw;
+	height:80vh;
+	margin:0 auto;
+	positon:realtive;
 	}
 
 }

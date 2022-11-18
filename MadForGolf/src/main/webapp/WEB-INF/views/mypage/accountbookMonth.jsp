@@ -17,9 +17,9 @@
 
 .chart-container{
 	width:500px;
-	height:800px;
-	margin:0px auto;
-	positon:realtive
+	height:700px;
+	margin:0 auto;
+	positon:realtive;
 }
 
 .content-container{
@@ -43,10 +43,13 @@
 
 .book{
 	font-weight:bold;
+	padding: 10px 15px;
 }
-
 .book:hover{
-	color:#FA7070;
+	color: white;
+	font-weight:bold;
+	background-color: #FA7070;
+	border-radius: 5px;
 }
 
 @media only screen and (max-width: 767px){
@@ -55,8 +58,13 @@
 		height:300px;
 	}
 	.chart-container{
-		width:300px;
-		height:500px;
+	width:80vw;
+	height:80vh;
+	margin:0 auto;
+	positon:realtive;
+	}
+	.table-box{
+	width:100%;
 	}
 }
 </style>
@@ -189,6 +197,7 @@
 			maintainAspectRatio:false
 		}
 	});
+	
 </script>
 
 <%@ include file="../include/footer.jsp" %>
