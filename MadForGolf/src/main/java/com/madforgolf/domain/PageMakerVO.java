@@ -21,7 +21,7 @@ public class PageMakerVO {
 //	private int perPageNum;
 	private PageVO vo;		// 페이지 번호, 페이지의 크기
 	
-	private int displayPageNum = 10;   // 페이지 블럭의 크기 
+	private int displayPageNum = 5;   // 페이지 블럭의 크기 
 	
 	
 	  //판매내역 페이징에 사용중 
