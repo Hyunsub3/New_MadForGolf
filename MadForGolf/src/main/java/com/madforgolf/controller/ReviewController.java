@@ -43,6 +43,9 @@ public class ReviewController {
 	private ProductSellerService prdSellerService;
 	
 	
+	// @@@@@@@@@@@@@@@@@@@@@@ 은주야 리뷰 컨트롤러는 전체 복붙해서 넣어줘 @@@@@@@@@@@@@@@@@@@@@@
+	
+	
 	
 	// ---------------------- 매너스코어 페이지 시작 ----------------------
 	
@@ -57,6 +60,16 @@ public class ReviewController {
 		log.info("mannerScore() 호출");
 			
 		String user_id = (String)session.getAttribute("user_id");
+		Integer totalCnt = service.getTotalCnt(user_id);
+
+		// 페이징 처리
+		PageMakerVO pm = new PageMakerVO();
+		pm.setVo(vo2); // 페이징 처리 하단부 정보를 vo에 받아오고
+		pm.setTotalCnt(totalCnt); // calData() 페이징처리에 필요한 계산식 계산 메서드가 포함된 전체 글 갯수 초기화 메서드 호출
+				
+		log.info("pmVO : " + pm);
+		log.info("pageVO : " + vo2);
+		
 		
 		MemberVO reviewList1 = (MemberVO) service.getReviewScore(user_id);
 		model.addAttribute("vo", reviewList1);
@@ -65,7 +78,7 @@ public class ReviewController {
 		// ----------------------------------------------------------------
 		
 		// 다른 사람이 쓴 리뷰 가져오기
-		List<ReviewVO> rvo = service.gerReviewListAll(user_id);
+		List<ReviewVO> rvo = service.gerReviewListAll(user_id, pm);
 		
 		model.addAttribute("rvo", rvo);
 		
@@ -74,16 +87,10 @@ public class ReviewController {
 		
 		
 		// 페이징 처리
-		Integer totalCnt = service.getTotalCnt(user_id);
 		log.info("DB 내 상품의 총 개수 : " + totalCnt + "개");
 
 		// 페이징 처리 하단부 정보 저장
-		PageMakerVO pm = new PageMakerVO();
-		pm.setVo(vo2); // 페이징 처리 하단부 정보를 vo에 받아오고
-		pm.setTotalCnt(totalCnt); // calData() 페이징처리에 필요한 계산식 계산 메서드가 포함된 전체 글 갯수 초기화 메서드 호출
 
-		log.info("pmVO : " + pm);
-		log.info("pageVO : " + vo2);
 
 		// 페이징 처리 객체(pm)을 어트리뷰트에 담아서 view로 보냄
 		model.addAttribute("pm", pm);

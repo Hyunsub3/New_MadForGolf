@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.madforgolf.domain.MemberVO;
+import com.madforgolf.domain.PageMakerVO;
 import com.madforgolf.domain.ReviewVO;
 import com.madforgolf.persistence.ReviewDAO;
 
@@ -32,10 +33,10 @@ public class ReviewServiceImpl implements ReviewService {
 
 	
 	// 리뷰 목록 (상품 번호로) 가져오기
-	@Override
-	public List<ReviewVO> gerReviewListAll(String seller_id) throws Exception {
-		return dao.getReviewListAll(seller_id);
-	}
+		@Override
+		public List<ReviewVO> gerReviewListAll(String seller_id, PageMakerVO pm) throws Exception {
+			return dao.getReviewListAll(seller_id, pm);
+		}
 
 	// 페이징 처리
 	@Override

@@ -23,9 +23,9 @@
 
 .chart-container{
 	width:500px;
-	height:800px;
-	margin:0px auto;
-	positon:realtive
+	height:700px;
+	margin:0 auto;
+	positon:realtive;
 }
 
 .content-container{
@@ -66,22 +66,25 @@
 	
 	}
 	.main-container{
-
+		width:90%;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
 		
 	
 	}
+	.chart-container{
+	width:80vw;
+	height:80vh;
+	margin:0 auto;
+	positon:realtive;
+	}
 	#purchaseMonth{
 		width: 90%;
 	}
 	.table-box{
-		padding-top : 5%;
-		padding-left : 5%;
-		text-align: center;
-	
- 	}
+	width:100%;
+	}
 	.col-12{
 
 	

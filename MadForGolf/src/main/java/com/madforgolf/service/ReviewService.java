@@ -3,6 +3,7 @@ package com.madforgolf.service;
 import java.util.List;
 
 import com.madforgolf.domain.MemberVO;
+import com.madforgolf.domain.PageMakerVO;
 import com.madforgolf.domain.ReviewVO;
 
 public interface ReviewService {
@@ -11,7 +12,7 @@ public interface ReviewService {
 	public MemberVO getReviewScore(String user_id) throws Exception;
 	
 	// 다른 사람이 쓴 리뷰 가져오기
-	public List<ReviewVO> gerReviewListAll (String seller_id) throws Exception;
+	public List<ReviewVO> gerReviewListAll (String seller_id, PageMakerVO pm) throws Exception;
 	
 	// 페이징 처리
 	public Integer getTotalCnt (String seller_id) throws Exception;

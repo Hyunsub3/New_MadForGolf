@@ -11,9 +11,15 @@
 	margin:0px auto;
 }
 
+.container{
+	display:grid;
+	width:100%;
+}
+
 @media only screen and (max-width: 767px){
 	.container {
-	width:70%;
+		display:grid;
+		width:90%;
 	}
 }
 </style>
@@ -81,35 +87,35 @@
                     <div class="checkout_details_area clearfix">
                         <h5>Login</h5>
                         <br><br>
-                        <form action="/member/login" id="login" method="post">
+                        <form action="/member/login" id="login" method="post" class="totalform">
                             <div class="row">
                                
-                                <div class="col-md-6 mb-4">
+                                <div class="col-12 mb-4">
                                 
                                     <label for="first_name">ID</label>
-                                    <input type="text" class="form-control" id="loginid" name="user_id" style="width:360pt;height:40pt; margin:auto;">
+                                    <input type="text" class="form-control" id="loginid" name="user_id">
 																		
                                     <label for="last_name">PW</label>
-                                    <input type="password" class="form-control" id="loginpw" name="user_pw" style="width:360pt;height:40pt; margin:auto;">
-                                	<br>
+                                    <input type="password" class="form-control" id="loginpw" name="user_pw">
+                                	<br><br><br><br>
                                 	
                                 	<div class="loginButton">
-                         			<button type="submit" class="idCheck btn alazea-btn w-80" id="login" value="N" style="width:360pt;height:40pt; margin:auto;">Login</button>
+                         			<button type="submit" class="idCheck btn alazea-btn w-80" id="login" value="N">Login</button>
                          			<br><br><br><br>
                          			<!-- 카카오 로그인 -->
                          			<%-- <div>
 										<a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=a1e9c36223914cdc6e0edf2ff5f92f81&redirect_uri=http://localhost:8088/member/kakaoLogin&response_type=code">
 										<img src="${pageContext.request.contextPath }/resources/icon/kakao_login_medium_wide.png" style="height:40px;margin:auto;">
-								    </a>                           
+								    </a>
                          			</div> --%>
                          			<!-- 네이버 -->
 								    <a class="naverLogin" href="${naverURL }">
-								  		 <img src="${pageContext.request.contextPath }/resources/icon/naverlogin.PNG" style="width:500pt;height:50pt;margin:auto;">
+								  		 <img src="${pageContext.request.contextPath }/resources/icon/naverlogin.PNG" style="width:400pt;height:50pt;margin:auto;">
 								  		 <br><br>
 								    </a>
                          			 <!-- 카카오 -->
 								    <a class="kakaoLogin" href="${kakaoURL }">
-								  		 <img src="${pageContext.request.contextPath }/resources/icon/kakaologin.PNG" style="width:500pt;height:50pt;margin:auto;">
+								  		 <img src="${pageContext.request.contextPath }/resources/icon/kakaologin.PNG" style="width:400pt;height:50pt;margin:auto;">
 								    </a>
                                 	</div>
                      		  	</div>

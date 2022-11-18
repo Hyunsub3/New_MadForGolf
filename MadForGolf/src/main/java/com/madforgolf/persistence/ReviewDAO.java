@@ -3,6 +3,7 @@ package com.madforgolf.persistence;
 import java.util.List;
 
 import com.madforgolf.domain.MemberVO;
+import com.madforgolf.domain.PageMakerVO;
 import com.madforgolf.domain.ReviewVO;
 
 public interface ReviewDAO {
@@ -12,7 +13,7 @@ public interface ReviewDAO {
 	
 
 	// 리뷰 목록 (상품 번호로) 가져오기
-	public List<ReviewVO> getReviewListAll (String seller_id) throws Exception;
+		public List<ReviewVO> getReviewListAll (String seller_id, PageMakerVO pm) throws Exception;
 	
 	
 	// 페이징 처리
