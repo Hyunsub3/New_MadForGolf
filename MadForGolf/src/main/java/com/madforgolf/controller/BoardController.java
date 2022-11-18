@@ -112,11 +112,11 @@ public class BoardController {
 		
 		log.info("########## vo: "+ vo);
 		
-		log.info(" ************* "+!multi.getFile("file1").isEmpty());
 		
 		// 업로드 파일 Map에 삽입
 		if(!multi.getFile("file1").isEmpty()) {
 			fileProcess(multi, vo, request);			
+			log.info(" ************* "+!multi.getFile("file1").isEmpty());
 		}
 		else {
 			vo.setContent_img("");
@@ -474,8 +474,8 @@ public class BoardController {
 					//멀티파트로 가져온 파일의 사이즈가 0이 아닐 때 == 파일이 있을 때
 					if(mfile.getSize() != 0) {
 						//첨부파일 업로드
-						mfile.transferTo(file1);
-	//					mfile.transferTo(file2);
+	//					mfile.transferTo(file1);
+						mfile.transferTo(file2);
 						log.info("파일 업로드 성공");
 					}//if문 종료
 				}// if(oFilename)
