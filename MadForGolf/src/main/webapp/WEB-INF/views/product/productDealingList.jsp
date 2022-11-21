@@ -213,7 +213,9 @@
 				<tr>
 					<td>${dealing.deal_date }</td>
 					<td><a href="/product/productDetail?prod_num=${dealing.deal_num}">${dealing.product.prod_name }</a></td>
-					<td>${dealing.product.price }</td>
+					<td>
+					&#8361;<fmt:formatNumber value="${dealing.product.price }"  pattern="###,###" /> 
+					</td>
 					<td>
 					<input class="category_btn1" type="button" id="deal${dealing.deal_num }" value="${dealing.state }">
  					<input type="hidden" value="${dealing.deal_num }" name="deal2" id="deal2">

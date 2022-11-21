@@ -409,7 +409,7 @@ public class BoardController {
 				
 					if(!ofileName.equals("")) {
 						// 파일 업로드 경로
-						String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf1\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
+						String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
 						// 속도가 느려 초반에 엑박뜸 and 경로 일치 필요 => but, 깃허브 연동 o
 						String uploadFolder2 = request.getServletContext().getRealPath("resources/product_img");
 						// 메서드를 통한 경로 => 속도가 빠름, 경로 일치 불필요 => but, 깃허브 연동 x

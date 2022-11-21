@@ -264,7 +264,7 @@ color: #fff;
 					<td>${buy.deal_date }</td>
 					<td><a href="/product/productDetail?prod_num=${buy.product.prod_num}">${buy.product.prod_name }</a></td>
 					<td >
-					 &#8361;<fmt:formatNumber value="${buy.product.price }"  pattern="###,###" /> 원
+					 &#8361;<fmt:formatNumber value="${buy.product.price }"  pattern="###,###" /> 
 					</td>
 					<td class="text-center">
 				    <c:choose>

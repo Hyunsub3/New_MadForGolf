@@ -187,7 +187,9 @@
 				<tr>
 					<td id="date">${sell.prod_date }</td>
 					<td><a href="/product/productDetail?prod_num=${sell.prod_num}">${sell.prod_name }</a></td>
-					<td>${sell.price }</td>
+					<td>
+					&#8361;<fmt:formatNumber value="${sell.price }"  pattern="###,###" /> 
+					</td>
 
 <%-- 					<td>
 						<a href="/board/boardRead?board_num=${vo.prod_num}">${vo.title }</a></td>
