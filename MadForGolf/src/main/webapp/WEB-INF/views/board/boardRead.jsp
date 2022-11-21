@@ -285,9 +285,11 @@ comment-head{
 							<div class=" mb-30 content_box">
 								<div class="content_inner_box" style="margin-bottom: 80px; margin-top: 40px;"><pre id="text">${vo.content }</pre></div>
 								<div class="img_box">
+									 <c:if test="${not empty vo.content_img}">
 									 <div class="img">
 	                                   	<img  src="${pageContext.request.contextPath }/resources/board_file/${vo.content_img }"alt="1">
 	                                 </div>
+	                                 </c:if>
 	                                 <c:if test="${not empty vo.content_img2}">
 		                                 <div class="img">
 		                                    <img src="${pageContext.request.contextPath }/resources/board_file/${vo.content_img2 }" alt="1">

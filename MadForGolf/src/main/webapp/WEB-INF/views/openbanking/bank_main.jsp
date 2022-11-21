@@ -25,7 +25,8 @@
 <script src="${pageContext.request.contextPath }/resources/js/jquery.serializeObject.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		
+		$('#price').val(sessionStorage.getItem('price'));
+		$('#price2').val(sessionStorage.getItem('price'));
 // 		alert("test");
 		
 		//function pay(){
@@ -212,6 +213,8 @@
 			
 </script>    
     하이하이
+ 
+    
     <div class="container">
 <!--     <h1> -->
 
@@ -268,7 +271,7 @@
 <!-- 		<input type="hidden" name="fintech_use_num" value="120220208388941285310465"> -->
 <!-- 		<input type="hidden" name="wd_print_content" value="오픈뱅킹출금"> -->
 		
-		<input type="hidden" name="tran_amt" value="1000">
+		<input type="hidden" id="price" name="tran_amt" value="1000">
 		<input type="hidden" name="tran_dtime" value="20221123151921">
 		<input type="hidden" name="req_client_name" value="마지막">
 <!-- 		<input type="hidden" name="req_client_bank_code" value="002"> -->
@@ -316,7 +319,7 @@
 <!-- 		<input type="hidden" name="bank_tran_id" value="M202202083U123432349"> -->
 		<input type="hidden" name="fintech_use_num" value="120220208388941285745275">
 		<input type="hidden" name="print_content" value="마지막중고거래">
-		<input type="hidden" name="tran_amt" value="1000">
+		<input type="hidden" id="price2" name="tran_amt" value="1000">
 		<input type="hidden" name="req_client_name" value="마지막">
 		<input type="hidden" name="req_client_bank_code" value="002">
 		<input type="hidden" name="req_client_account_num" value="20221123">
