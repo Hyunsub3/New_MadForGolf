@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <!-- JSTL사용  -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../include/header.jsp" %>
 
 <style type="text/css">
@@ -512,6 +513,12 @@ a.button {
 		border: none !important;
 		font-size: 20px;`
 	}
+	#img1 {
+		height: auto !important;
+    	max-width: 100% !important;
+    	margin-left: 55px !important;
+	}
+	
 
 }
 /*====================반응형 웹======================= */
@@ -602,7 +609,7 @@ a.button {
 						<div class="single-product-area mb-50" style="margin-top: 25px;">
 							<!-- Product Image -->
 							<div class="product-img"> 
-								<a id="ProductArea" href="${pageContext.request.contextPath }/product/productDetail?prod_num=${vo.prod_num}"><img style="width: 300px; height: 300px;" src="${pageContext.request.contextPath }/resources/product_img/${vo.prod_img}" id="img"></a>
+								<a id="ProductArea" href="${pageContext.request.contextPath }/product/productDetail?prod_num=${vo.prod_num}"><img style="width: 300px; height: 300px;" src="${pageContext.request.contextPath }/resources/product_img/${vo.prod_img}" id="img1"></a>
 								<!-- Product Tag -->
 								<div class="product-tag">
 									<!-- <a href="#">Hot</a> -->
@@ -620,7 +627,9 @@ a.button {
 									${vo.prod_name }
 								</a> 
 								</p>
-								<h6 id="ProductArea" class="ProductArea">${vo.price }원</h6>
+								<h6 id="ProductArea" class="ProductArea">
+								&#8361;<fmt:formatNumber value="${vo.price }"  pattern="###,###" /> 
+								</h6>
 							</div>
 						</div>
 					</div>

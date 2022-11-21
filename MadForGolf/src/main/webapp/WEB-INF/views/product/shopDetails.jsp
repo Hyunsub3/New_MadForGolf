@@ -65,6 +65,16 @@
 		width:100px !important;
 		margin: 8px auto;
 	}
+	
+	#span{
+		margin-left: 30px !important;
+		margin-right: 0px !important;
+		
+	}
+	#kakaoImg{
+		margin-left: 25px !important;
+	}
+
 }
 /* ==================================미디어쿼리===================================== */
 	#p{
@@ -117,8 +127,8 @@ function shareMessage() {
         imageUrl: 'https://cdn.pixabay.com/photo/2017/01/07/17/25/golfer-1960998_960_720.jpg',
         //대표 이미지 주소 넣을 예정 -> 상품별 이미지 불러오기 어려브..
         link: {
-          mobileWebUrl: 'http://localhost:8088/',
-          webUrl: 'http://localhost:8088/',
+          mobileWebUrl: 'http://itwillbs7.cafe24.com',
+          webUrl: 'http://itwillbs7.cafe24.com',
           //http://itwillbs7.cafe24.com/MadForGolf 
           //최종 호스팅하고 주소 넣을 예정 
         },
@@ -525,7 +535,7 @@ $(document).ready(function(){
 									<input type="hidden" name="client_id" value="6f948a13-11af-4892-b746-ee67d358abf2">
 									<input type="hidden" name="response_type" value="code">
 <!-- 									<input type="hidden" name="redirect_uri" value="http://localhost:8088/openbanking/callback"> -->
-									<input type="hidden" name="redirect_uri" value="http://localhost:8080/openbanking/callback">
+									<input type="hidden" name="redirect_uri" value="http://itwillbs7.cafe24.com/openbanking/callback">
 									<input type="hidden" name="scope" value="login inquiry transfer oob">
 									<input type="hidden" name="state" value="12345678123456781234567812345678">
 									<input type="hidden" name="auth_type" value="0">

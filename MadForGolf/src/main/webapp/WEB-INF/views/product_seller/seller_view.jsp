@@ -225,7 +225,8 @@
                             <h5>${sellerInfo.score}P</h5>
                         </div>
                         <div class="checkout-btn mt-30">
-                            <a href="http://localhost:8080/product/productDetail?prod_num=${sellerInfo.prod_num}" class="btn alazea-btn w-100">상품으로 돌아가기</a>
+<%--                             <a href="http://localhost:8088/product/productDetail?prod_num=${sellerInfo.prod_num}" class="btn alazea-btn w-100">상품으로 돌아가기</a>
+ --%>                            <a class="btn alazea-btn w-100" onclick="history.back();">상품으로 돌아가기</a>
                         </div>
                     </div>
                 </div>

@@ -300,7 +300,8 @@ img {
   display: inline-block;
   min-width: 150px;
   height: 46px;
-  color: #91C788;
+  color: #ffffff;
+  background-color: #91C788;
   border: 2px solid #91C788;
   border-radius: 2px;
   padding: 0 20px;
@@ -310,9 +311,9 @@ img {
   font-weight: 600; }
   .alazea-btn.active, .alazea-btn:hover, .alazea-btn:focus {
     font-size: 16px;
-	color: #ffffff;
-	background-color: #91C788;
+    color: #91C788;
     font-weight: 600;
+    background-color: transparent;
     box-shadow: none; }
 
 /* :: 4.0 Header Area CSS */
