@@ -17,6 +17,8 @@ import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -394,13 +396,13 @@ public class MemberController {
 	// ------------------------ 아이디, 비밀번호 찾기 끝 ------------------------------------
 			
 			
-			
-	// ------------------------ 회원 정보 수정 시작 ------------------------
-			
-			
-			
-	// 가상주소 http://localhost:8080/FunWeb/member/update
-	// => /WEB-INF/views/member/update.jsp
+	
+// ------------------------ 회원 정보 수정 시작 ------------------------
+		
+		
+		
+
+// => /WEB-INF/views/member/update.jsp
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public String update(HttpSession session, Model model) {
 		// 세션값 가져오기
@@ -416,39 +418,76 @@ public class MemberController {
 		return "member/update";
 		// redirect:/ (==) /index
 	}
-				
-				
-	// 가상주소 http://localhost:8080/FunWeb/member/updatePro
-	// 수정처리 메시지 "MemberController updatePro()"
-	// 가상주소 redirect:/main/main 이동
+			
+	// 수정처리 메시지 "MemberController updatePro()"		
 	@RequestMapping(value = "/updatePro", method = RequestMethod.POST)
-	public String updatePro(MemberVO vo) {
+	public ResponseEntity<?> updatePro(MemberVO vo, HttpSession session) throws Exception {
 					  
 		log.info( "updatePro() 호출");
+		// 세션값 가져오기
+		String id =(String)session.getAttribute("user_id");				
+		vo.setUser_id(id);
+		
+		log.info( "updatePro() 호출  {} ", vo.toString());
+		service.updateMember(vo);		
+		
+		//세션정보 업데이트 처리            
+		MemberVO loginVO = service.login(vo);
+		log.info("**** loginVO : "+loginVO);			   
+		session.setAttribute("user_id", loginVO.getUser_id());
+		session.setAttribute("loginVO", loginVO);
+					
+		return ResponseEntity.status(HttpStatus.OK).body("success");
+		
 		// loginMember 비밀번호 일치 여부 확인
-		MemberVO vo2=service.loginMember(vo);
+		//MemberVO vo2 = service.loginMember(vo);
 		// 아이디 비밀번호 일치 => 수정처리 => /main/main 이동
 		// 아이디 비밀번호  틀림  => msg.jsp  뒤로이동
-		if(vo2!=null) {
+		//if(vo2!=null) {
 			// 아이디 비밀번호 일치
 			//수정처리
-			int result=service.updateMember(vo);
+			
+		//	service.updateMember(vo);
+		//	log.info("회원정보 수정 동작");
 			// 메인 페이지로 이동
 			// 주소가 변경되면서 가상주소 이동
-//			response.sendRedirect() 
-			return "/member/login";
-		}else {
-			// 아이디 비밀번호 틀림
-//			System.out.println("틀림");
-			//  /WEB-INF/views/member/msg.jsp
-			return "/member/msg";
-		}
+			// response.sendRedirect()
+		//	return "/member/login";
+		//}
+//		else {
+//			//  아이디 
+//			//  /WEB-INF/views/member/msg.jsp
+//			return "/member/login";
+//		}
+		//	return "member/update";
 	}
+	
+	// 전화번호 업데이트처리
+		@ResponseBody
+		@RequestMapping(value = "/updatePhone", method = RequestMethod.POST)
+		public ResponseEntity<?> updatePhoneCheck(MemberVO vo, HttpSession session)  {
+			try {
+				
+				log.info("updatePhoneCheck() 호출");
+				
+				// 세션값 가져오기
+				String id =(String)session.getAttribute("user_id");				
+				vo.setUser_id(id);
+				log.info("@@@@@@  {}", vo.toString());				
+				return ResponseEntity.status(HttpStatus.OK).body(service.updatePhone(vo));
+				
+				
+			}catch (Exception e) {
+				log.info("전화 번호 중복 ");
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(-2);
+			}
+
+		}
 		
 	// ------------------------ 회원 정보 수정 끝 ------------------------
-	
-			
-	
+
+		
+		
 	// ------------------------ 회원 탈퇴 시작 ------------------------
 	// http://localhost:8080/member/delete
 	@RequestMapping(value="/delete",method=RequestMethod.GET)
@@ -685,7 +724,7 @@ public class MemberController {
 				@RequestMapping(value="/address" , method = RequestMethod.POST)
 				public String lalongAddr(@RequestParam HashMap<String, String> paramMap, HttpServletResponse response, HttpSession session, Model model) throws Exception {
 					// 세션값 가져오기
-					String id =(String)session.getAttribute("user_id");
+					String id =(String) session.getAttribute("user_id");
 					log.info("id@@@@@@@@@@@@@@@@@@@@@@@@ : "+id);
 					
 					MemberVO vo=service.getMember(id);
@@ -739,28 +778,71 @@ public class MemberController {
 								
 				
 				// 위도경도 처리 - 서하 ############################
-						@ResponseBody
-						@RequestMapping(value="/sendAddr", method=RequestMethod.POST)
-						public int sendAddr(@RequestParam("address") String address, HttpSession session, HttpServletResponse response) throws Exception {
-							
-							MemberVO vo = new MemberVO();
-							vo.setRoadFullAddr(address);
-							
-							if(session.getAttribute("user_id") != null) {
-								vo.setUser_id(session.getAttribute("user_id").toString());	
-							} else {
-								return 2;	
-							}
-							
-							log.info("session 값  {}", session.getAttribute("user_id"));
-							service.saveAddr(vo);
-							log.info("역지오코딩 주소 저장 완료");
-							return 1;
-						}
-				
-				// ------------------------ 지역인증 끝 (SNS 가입 회원 전용) ------------------
-						
-						
+				@ResponseBody
+				@RequestMapping(value="/sendAddr", method=RequestMethod.POST)
+				public int sendAddr(@RequestParam("address") String address, HttpSession session, HttpServletResponse response) throws Exception {
+					
+					log.info("수정 전 address : " + address);
+					
+					int beginIndex = address.indexOf(" ", 2);
+					int endIndex = address.length();
+					String text1 = address.substring(0, beginIndex);
+					String text2 = address.substring(beginIndex, endIndex);
+					log.info("text1 : " + text1);
+					log.info("text2 : " + text2);
+					
+					if(text1.equals("서울")) {
+						address = text1 + "특별시" + text2;
+					} else if(text1.equals("부산")) {
+						address = text1 + "광역시" + text2;
+					} else if(text1.equals("대구")) {
+						address = text1 + "광역시" + text2;
+					} else if(text1.equals("인천")) {
+						address = text1 + "광역시" + text2;
+					} else if(text1.equals("광주")) {
+						address = text1 + "광역시" + text2;
+					} else if(text1.equals("대전")) {
+						address = text1 + "광역시" + text2;
+					} else if(text1.equals("울산")) {
+						address = text1 + "광역시" + text2;
+					} else if(text1.equals("경기")) {
+						address = "경기도 " + text2;
+					} else if(text1.equals("강원")) {
+						address = "강원도 " + text2;
+					} else if(text1.equals("충북")) {
+						address = "충청북도 " + text2;
+					} else if(text1.equals("충남")) {
+						address = "충청남도 " + text2;
+					} else if(text1.equals("전북")) {
+						address = "전라북도 " + text2;
+					} else if(text1.equals("전남")) {
+						address = "전라남도 " + text2;
+					} else if(text1.equals("경북")) {
+						address = "경상북도 " + text2;
+					} else if(text1.equals("경남")) {
+						address = "경상남도 " + text2;
+					} else {
+						address = text1 + text2;
+					}
+					
+					log.info("수정 후 address : " + address);
+					
+					MemberVO vo = new MemberVO();
+					vo.setRoadFullAddr(address);
+					
+					if(session.getAttribute("user_id") != null) {
+						vo.setUser_id(session.getAttribute("user_id").toString());	
+					} else {
+						return 2;	
+					}
+					
+					log.info("session 값  {}", session.getAttribute("user_id"));
+					service.saveAddr(vo);
+					log.info("역지오코딩 주소 저장 완료");
+					return 1;
+				}
+		
+		// ------------------------ 지역인증 끝 (SNS 가입 회원 전용) ------------------
 						
 						
 						

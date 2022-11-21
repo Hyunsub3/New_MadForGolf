@@ -210,7 +210,7 @@
 								if(res==="success"){
 									alert('수정이 완료되었습니다.');		
 									location.reload();
-									location.href="/member/login";
+									location.href="/member/mypage";
 								}
 							},
 							error:function(error){

@@ -225,7 +225,7 @@
                             <h5>${sellerInfo.score}P</h5>
                         </div>
                         <div class="checkout-btn mt-30">
-                            <a href="http://localhost:8080/product/productDetail?prod_num=${sellerInfo.prod_num}" class="btn alazea-btn w-100">목록으로</a>
+                            <a href="http://localhost:8080/product/productDetail?prod_num=${sellerInfo.prod_num}" class="btn alazea-btn w-100">상품으로 돌아가기</a>
                         </div>
                     </div>
                 </div>
@@ -299,6 +299,8 @@
 	                                    <br> <span> 소중한 후기 하나하나가 국내 1위 MadForGolf를 만듭니다.</span></p>
 	                            </div>
 	                        </div>
+	                        
+<%-- 	                        <c:if test="${empty }">아직 작성된 리뷰가 없습니다.</c:if> --%>
 	                        <!-- tab3 (리뷰/후기) 시작 -->
 	                        <div role="tabpanel" class="tab-pane fade" id="reviews">
 	                        

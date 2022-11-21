@@ -54,7 +54,7 @@ public class DealController {
 		PrintWriter out = response.getWriter();
 		out.println("<script>");
 		out.println("alert('상품등록 및 거래전 세팅 완료');");
-		out.println("location.href='/'");
+		out.println("location.href='/product/listAll2'");
 		out.println("</script>");
 		out.flush();
 

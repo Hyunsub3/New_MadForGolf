@@ -23,7 +23,7 @@
                                 <p>실시간으로 가장 주목 받고 있는 인기 상품을 확인할 수 있습니다.</p>
                                 <div class="welcome-btn-group">
                                     <a href="/product/listLike2" class="btn alazea-btn mr-30">인기상품 보러가기</a>
-                                    <a href="/product/listAll2" class="btn alazea-btn active">최신상품 보러가기</a>
+                                    <a href="/product/listAll2" class="btn alazea-btn mr-30">최신상품 보러가기</a>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                 <p>지금 내가 있는 곳을 인증해서 우리 동네의 중고 물품을 거래해보세요.</p>
                                 <div class="welcome-btn-group">
                                     <a href="/member/address" class="btn alazea-btn mr-30">동네 인증하기</a>
-                                    <a href="#screen_golf" class="btn alazea-btn active">동네 스크린 골프장 확인하기</a>
+                                    <a href="#screen_golf" class="btn alazea-btn mr-30">동네 스크린 골프장 확인하기</a>
                                 </div>
                             </div>
                         </div>
