@@ -142,7 +142,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#deal').click(function(){
+		$('.category_btn1').click(function(){
 			
 			var deal2 = $(this).next().val();
 			//alert(deal2);
@@ -215,7 +215,7 @@
 					<td><a href="/product/productDetail?prod_num=${dealing.deal_num}">${dealing.product.prod_name }</a></td>
 					<td>${dealing.product.price }</td>
 					<td>
-					<input class="category_btn1" type="button" id="deal" value="${dealing.state }">
+					<input class="category_btn1" type="button" id="deal${dealing.deal_num }" value="${dealing.state }">
  					<input type="hidden" value="${dealing.deal_num }" name="deal2" id="deal2">
  					</td>
 
