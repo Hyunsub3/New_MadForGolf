@@ -51,14 +51,21 @@
 
 	<!-- 메인(index.jsp)상품 목록(일단, 최신순으로 카테고리/성별구분없이 설정함) -->
 	
-	<select id="listMain" resultMap="product">
+<!-- 	<select id="listMain" resultMap="product">
 		select p.*
 		from mfg_products p join mfg_deal d
 		on p.prod_num = d.prod_num
 		where d.state != '거래후'
 		order by p.prod_date desc
 	</select>
+ -->
 
-
+	<select id="listMain" resultMap="product">
+		select p.*
+		from mfg_products p join mfg_deal d
+		on p.prod_num = d.prod_num
+		where d.state != '거래후'
+		order by p.like_count desc
+	</select>
 
 </mapper>

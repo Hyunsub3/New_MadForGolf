@@ -70,20 +70,20 @@
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
-		
-	
 	}
 	.chart-container{
-	width:80vw;
-	height:80vh;
-	margin:0 auto;
-	positon:realtive;
+		width:80vw;
+		height:80vh;
+		margin:0 auto;
+		positon:realtive;
 	}
 	#purchaseMonth{
 		width: 90%;
 	}
 	.table-box{
-	width:100%;
+		width:80%;
+		padding-top:0px;
+		padding-left:0px;
 	}
 	.col-12{
 
@@ -93,7 +93,7 @@
 
 	}
 	.img-container{
-		main-item:50%;
+		width:80%;
 	}
 }
 </style>

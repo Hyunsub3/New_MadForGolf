@@ -43,7 +43,7 @@ var client = new TalkPlus.Client({appId: APP_ID});
 <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(${pageContext.request.contextPath }/resources/img/bg-img/24.jpg);">
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/resources/img/bg-img/background-img (4).jpg');">
             <h2>chattingList</h2>
         </div>
         <div class="container">
@@ -83,8 +83,7 @@ var client = new TalkPlus.Client({appId: APP_ID});
 											<td><span class="badge bg-orange">${vo.talker2_id }</span></td>
 											<td><span class="badge bg-orange">${vo.talker2_name }</span></td>							
 										</c:if>
-											<td><input type="button" value="채팅하기" onclick="window.open('/product/chatting?chattingNum=${vo.chattingNum}');">
-												<input type="button" id="exit" value="채팅나가기" onclick=""><input type="hidden" id="exitChattingNum" value="${vo.chattingNum }"></td>
+											<td><input type="button" value="채팅하기" onclick="window.open('/product/chatting?chattingNum=${vo.chattingNum}', 'Mad for Golf', '_blank');">												<input type="button" id="exit" value="채팅나가기" onclick=""><input type="hidden" id="exitChattingNum" value="${vo.chattingNum }"></td>
 									</c:when>
 									<c:when test="${sessionScope.user_id eq vo.talker2_id }">
 										<c:if test="${empty vo.talker1_id }">
@@ -95,8 +94,7 @@ var client = new TalkPlus.Client({appId: APP_ID});
 											<td><span class="badge bg-orange">${vo.talker1_id }</span></td>
 											<td><span class="badge bg-orange">${vo.talker1_name }</span></td>							
 										</c:if>
-											<td><input type="button" value="채팅하기" onclick="window.open('/product/chatting?chattingNum=${vo.chattingNum}');">
-												<input type="button" id="exit" value="채팅나가기" onclick=""><input type="hidden" id="exitChattingNum" value="${vo.chattingNum }"></td>
+											<td><input type="button" value="채팅하기" onclick="window.open('/product/chatting?chattingNum=${vo.chattingNum}', 'Mad for Golf', '_blank');">												<input type="button" id="exit" value="채팅나가기" onclick=""><input type="hidden" id="exitChattingNum" value="${vo.chattingNum }"></td>
 									</c:when>
 								</c:choose>
 							</tr>

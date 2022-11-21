@@ -265,7 +265,7 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 	
-	
+	sessionStorage.setItem("price", ${deal.product.price });
 	//alert(${product.seller_id});
 	
 	$("#addtocart").click(function(){
@@ -337,7 +337,7 @@ $(document).ready(function(){
 					success: function(chattingNum){
 // 						alert("성공");
 // 						alert(chattingNum);
-						window.open("/product/chatting?chattingNum="+chattingNum+"", "Mad for Golf", "menubar=no, toolbar=no, location=no, status=no, resizable=no, scrollbars=no, width=200");
+						window.open("/product/chatting?chattingNum="+chattingNum+"", "Mad for Golf", "menubar=no, toolbar=no, location=no, resizable=no, scrollbars=no, width=200");
 						},
 					error: function(){
 						alert("실패");

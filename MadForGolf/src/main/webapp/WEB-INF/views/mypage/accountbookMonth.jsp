@@ -8,6 +8,7 @@
 <style type="text/css">
 .container{
 	display:grid;
+	width:100%;
 }
 
 .main-item{
@@ -52,19 +53,40 @@
 	border-radius: 5px;
 }
 
+.about-us-area{
+	display:grid;
+	width:100%;
+}
+.section-heading text-center{
+	display:grid;
+	width:100%;
+}
+
 @media only screen and (max-width: 767px){
-	.img-container{
-		width:300px;
-		height:300px;
+	.about-us-area{
+		display:grid;
+		width:80%;
+	}
+	.container {
+		display:grid;
+		width:80%;
+	}
+	.main-item{
+		width:100%;
+		height:100%;
 	}
 	.chart-container{
-	width:80vw;
-	height:80vh;
-	margin:0 auto;
-	positon:realtive;
+		width:80vw;
+		height:80vh;
+		margin:0 auto;
+		positon:realtive;
 	}
 	.table-box{
-	width:100%;
+		width:100%;
+	}
+	..section-heading text-center{
+		display:grid;
+		width:90%;
 	}
 }
 </style>
@@ -107,15 +129,21 @@
 			<!-- 선 -->
 			
 			
+					<%-- <picture>
+					     <source media="(min-width: 1024px)" srcset="${pageContext.request.contextPath}/resources/img/geoji4.jpg" class="img-fluid">
+					       <source media="(min-width: 768px)" srcset="${pageContext.request.contextPath}/resources/img/geoji_small.jpg" class="img-fluid">
+					       <img src="${pageContext.request.contextPath}/resources/img/geoji_small.jpg" class="img-fluid">
+				   </picture> --%>
 			<!-- JSTL -->
 			<c:choose>
 				<c:when test="${purchaseCnt eq 0 && saleCnt eq 0}">
+				   
 					<div class="main-item">
 						<div class="img-container">
-							<img src="${pageContext.request.contextPath }/resources/img/geoji4.jpg" style="width:500px; height:500px; margin:0px auto;">
+							<img src="${pageContext.request.contextPath }/resources/img/geoji4.jpg">
 							<br><br><br><br>
 						</div>
-						<button class="btn alazea-btn w-120" style="width:360pt;height:40pt;margin:auto;" onClick="location.href='/product/listAll'" value="">거래하러 가기</button>
+						<button class="btn alazea-btn w-120" onClick="location.href='/product/listAll'" value="">거래하러 가기</button>
 					    	<br><br><br><br><br>
 						</div>
 					</div>
@@ -127,7 +155,6 @@
 	
 							<table class="table">
 								<tbody>
-								
 									<tr>
 										<th><a href="/mypage/accountbookPurchase" style="font-size:18px;" class="book">구매</a></th>
 										<th><span class="account">${purchaseCnt }</span>번</th>
