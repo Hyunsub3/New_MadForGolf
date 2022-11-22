@@ -345,7 +345,7 @@
 						 <img src="${pageContext.request.contextPath }/resources/icon/annual-report.png" style="width:60pt;height:50pt; alt="">
 						 </div>
                          <div class="service-content">
-                            <h5>Account Book</h5>
+                            <h5>Golf Wallet</h5>
                             <h6>월별 거래 현황을 한 눈에</h6>
                         </div>
                     </div>

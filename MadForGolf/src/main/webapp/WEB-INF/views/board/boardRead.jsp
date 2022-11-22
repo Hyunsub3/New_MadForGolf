@@ -288,6 +288,8 @@ comment-head{
 									 <c:if test="${not empty vo.content_img}">
 									 <div class="img">
 	                                   	<img  src="${pageContext.request.contextPath }/resources/board_file/${vo.content_img }"alt="1">
+<%-- 	                                   	<img  src="${pageContext.request.contextPath }/resources/board_file/${vo.content_img }"alt="1"> --%>
+<%-- 	                                   	<img  src="tomcat/webapps/board_file/${vo.content_img }"alt="1"> --%>
 	                                 </div>
 	                                 </c:if>
 	                                 <c:if test="${not empty vo.content_img2}">
