@@ -38,7 +38,7 @@
     </div>
 <!-- ##### Breadcrumb Area End ##### --> 
 
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/talkplus-js-0.2.17.js" ></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 <script type="text/javascript">
@@ -186,13 +186,14 @@
 
 	});
 	
-	function goPopup(){
-	    var pop = window.open("/popup/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-	}
-	function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
-							, detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
-		document.form.roadFullAddr.value = roadFullAddr;
-	}
+		// 카카오 주소api 호출
+		function goPopup(){
+		    new daum.Postcode({
+		        oncomplete: function(data) { //선택시 입력값 세팅
+		            document.getElementById("roadFullAddr").value = data.address; // 주소 넣기
+		        }
+		    }).open();
+		}
 
 	
 </script>

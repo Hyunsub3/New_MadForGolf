@@ -7,9 +7,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.2/proj4.js" type="text/javascript"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9848c8896187625882fecd73a68b8c43&libraries=services">
 </script>
+
+
 <script type="text/javascript">
-   
+	$(document).ready(function() {
+		$('#address').submit(function(){ 
+	// 주소 정보 제어
+			if ($('#roadFullAddr').val() == '') {
+				alert("주소 정보를 저장하세요.");
+				return false;
+			}
+		}); 
+}); 
 </script>
+
 
 <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
@@ -40,12 +51,18 @@
 
 </head>
 <body>
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
 
+// 카카오 주소api 호출
 function goPopup(){
-    var pop = window.open("/popup/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+    new daum.Postcode({
+        oncomplete: function(data) { //선택시 입력값 세팅
+            document.getElementById("roadFullAddr").value = data.address; // 주소 넣기
+        }
+    }).open();
 }
+
 function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
                   , detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
    document.form.roadFullAddr.value = roadFullAddr;
@@ -219,8 +236,8 @@ function sendAddr(address) {
                            <button class="btn alazea-btn w-120" style="width:360pt;height:40pt;margin:auto;">저장하기</button>
                            </div><br><br><br>
                         </div>
+                  	</form><br><br><br>
                      </div>                        
-                  </form><br><br><br>
                </div>
             </div>
          </div>

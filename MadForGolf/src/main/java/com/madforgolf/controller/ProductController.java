@@ -1030,44 +1030,8 @@ public class ProductController {
 		// 지역정보 세션 만들기
 		@RequestMapping(value = "/address", method = RequestMethod.GET)
 		public void addrGET(@RequestParam("address") String address, HttpSession session) throws Exception {
-			String[] addresses = address.split(" ");
-			String addr = "";
-			if(addresses[0].equals("서울")) {
-				addr = addresses[0] + "특별시 " + addresses[1];
-			} else if(addresses[0].equals("부산")) {
-				addr = addresses[0] + "광역시 " + addresses[1];
-			} else if(addresses[0].equals("대구")) {
-				addr = addresses[0] + "광역시 " + addresses[1];
-			} else if(addresses[0].equals("인천")) {
-				addr = addresses[0] + "광역시 " + addresses[1];
-			} else if(addresses[0].equals("광주")) {
-				addr = addresses[0] + "광역시 " + addresses[1];
-			} else if(addresses[0].equals("대전")) {
-				addr = addresses[0] + "광역시 " + addresses[1];
-			} else if(addresses[0].equals("울산")) {
-				addr = addresses[0] + "광역시 " + addresses[1];
-			} else if(addresses[0].equals("경기")) {
-				addr = "경기도 " + addresses[1];
-			} else if(addresses[0].equals("강원")) {
-				addr = "강원도 " + addresses[1];
-			} else if(addresses[0].equals("충북")) {
-				addr = "충청북도 " + addresses[1];
-			} else if(addresses[0].equals("충남")) {
-				addr = "충청남도 " + addresses[1];
-			} else if(addresses[0].equals("전북")) {
-				addr = "전라북도 " + addresses[1];
-			} else if(addresses[0].equals("전남")) {
-				addr = "전라남도 " + addresses[1];
-			} else if(addresses[0].equals("경북")) {
-				addr = "경상북도 " + addresses[1];
-			} else if(addresses[0].equals("경남")) {
-				addr = "경상남도 " + addresses[1];
-			} else {
-				addr = addresses[0] + " " + addresses[1];
-			}
 			
-			log.info(addr);
-			session.setAttribute("addr", addr);
+			session.setAttribute("addr", address);
 		}
 
 	

@@ -196,7 +196,9 @@ public class BoardController {
 			
 			//파일 저장위치
 //			String uploadFolder1 = "C:\\Users\\Hazle_dandan\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\board_file";
-			String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\board_file";
+//			String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\board_file";
+			String uploadFolder1 = "\\tomcat\\webapps\\board_file";
+//			String uploadFolder1 = "http://itwillbs7.cafe24.com\\board_file";
 //			C:\Users\ITWILL\git\New_MadForGolf\MadForGolf\src\main\webapp\resources\board_file
 			// 속도가 느려 파일 업로드 되는데 시간이 걸림, 경로가 맞는지 매번 확인 해야 함 => but, 깃허브 연동 o
 
@@ -212,16 +214,16 @@ public class BoardController {
 			//파일을 저장소에 저장하기 위한 파일 객체 생성 후 지정
 			//지정된 위치에 파일 저장
 			File file1 = new File(uploadFolder1+"\\"+uploadFileName);
-			File file2 = new File(uploadFolder2+"\\"+uploadFileName);
+//			File file2 = new File(uploadFolder2+"\\"+uploadFileName);
 			
 			log.info("파일 저장을 위한 객체 생성 성공");
 			
 			//멀티파트로 가져온 파일의 사이즈가 0이 아닐 때 == 파일이 있을 때
 			if(mfile.getSize() != 0) {
 				//첨부파일 업로드
-//				mfile.transferTo(file1);
-				mfile.transferTo(file2);
-				Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
+				mfile.transferTo(file1);
+//				mfile.transferTo(file2);
+//				Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
 				log.info("파일 업로드 성공");
 			}//if문 종료
 			
@@ -409,7 +411,9 @@ public class BoardController {
 				
 					if(!ofileName.equals("")) {
 						// 파일 업로드 경로
-						String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
+//						String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
+						String uploadFolder1 = "\\tomcat\\webapps\\ROOT\\board_file";
+
 						// 속도가 느려 초반에 엑박뜸 and 경로 일치 필요 => but, 깃허브 연동 o
 						String uploadFolder2 = request.getServletContext().getRealPath("resources/product_img");
 						// 메서드를 통한 경로 => 속도가 빠름, 경로 일치 불필요 => but, 깃허브 연동 x

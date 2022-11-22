@@ -642,7 +642,7 @@ public class MemberController {
 			session.setAttribute("signIn", apiResult);
 			session.setAttribute("user_id", email);
 			session.setAttribute("user_name", name);
-
+			
 			MemberVO member = new MemberVO();
 			member.setUser_id(email);
 			member.setUser_name(name);
@@ -726,7 +726,16 @@ public class MemberController {
 					// 세션값 가져오기
 					String id =(String) session.getAttribute("user_id");
 					log.info("id@@@@@@@@@@@@@@@@@@@@@@@@ : "+id);
-					
+					if (id == null || "".equals(id)) {
+						response.setContentType("text/html; charset=UTF-8");
+						PrintWriter out=response.getWriter();
+						out.println("<script>");
+						out.println("alert('세션없음!');");
+						out.println("location.href='/member/login'");
+						out.println("</script>");
+						out.close();
+						
+					}
 					MemberVO vo=service.getMember(id);
 					String roadFullAddr = paramMap.get("roadFullAddr");
 					String jsonString =  memberServiceImpl.getKakaoApiFromAddress(roadFullAddr);
@@ -737,7 +746,7 @@ public class MemberController {
 					paramMap.put("longitude", XYMap.get("x"));
 					paramMap.put("user_id", vo.getUser_id());
 
-						
+						 
 					memberServiceImpl.lalongAddr(paramMap);
 					
 				
@@ -759,7 +768,7 @@ public class MemberController {
 							
 							
 							
-					return "member/address";
+					return "/member/address";
 				}
 						
 						
@@ -784,46 +793,6 @@ public class MemberController {
 					
 					log.info("수정 전 address : " + address);
 					
-					int beginIndex = address.indexOf(" ", 2);
-					int endIndex = address.length();
-					String text1 = address.substring(0, beginIndex);
-					String text2 = address.substring(beginIndex, endIndex);
-					log.info("text1 : " + text1);
-					log.info("text2 : " + text2);
-					
-					if(text1.equals("서울")) {
-						address = text1 + "특별시" + text2;
-					} else if(text1.equals("부산")) {
-						address = text1 + "광역시" + text2;
-					} else if(text1.equals("대구")) {
-						address = text1 + "광역시" + text2;
-					} else if(text1.equals("인천")) {
-						address = text1 + "광역시" + text2;
-					} else if(text1.equals("광주")) {
-						address = text1 + "광역시" + text2;
-					} else if(text1.equals("대전")) {
-						address = text1 + "광역시" + text2;
-					} else if(text1.equals("울산")) {
-						address = text1 + "광역시" + text2;
-					} else if(text1.equals("경기")) {
-						address = "경기도 " + text2;
-					} else if(text1.equals("강원")) {
-						address = "강원도 " + text2;
-					} else if(text1.equals("충북")) {
-						address = "충청북도 " + text2;
-					} else if(text1.equals("충남")) {
-						address = "충청남도 " + text2;
-					} else if(text1.equals("전북")) {
-						address = "전라북도 " + text2;
-					} else if(text1.equals("전남")) {
-						address = "전라남도 " + text2;
-					} else if(text1.equals("경북")) {
-						address = "경상북도 " + text2;
-					} else if(text1.equals("경남")) {
-						address = "경상남도 " + text2;
-					} else {
-						address = text1 + text2;
-					}
 					
 					log.info("수정 후 address : " + address);
 					
