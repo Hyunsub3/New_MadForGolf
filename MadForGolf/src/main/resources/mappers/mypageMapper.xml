@@ -71,7 +71,7 @@
 		on d.prod_num=p.prod_num
 		where d.buyer_id=#{user_id}
 		and month(d.deal_date)=month(sysdate())
-		and p.category='Util'
+		and p.category='Utillity'
 		and state='거래후'
 	</select>
 	
@@ -137,7 +137,7 @@
 		on d.prod_num=p.prod_num
 		where d.seller_id=#{user_id}
 		and month(d.deal_date)=month(sysdate())
-		and p.category='Util'
+		and p.category='Utillity'
 		and state='거래후'
 	</select>
 	
