@@ -534,8 +534,8 @@ $(document).ready(function(){
                                    
 									<input type="hidden" name="client_id" value="6f948a13-11af-4892-b746-ee67d358abf2">
 									<input type="hidden" name="response_type" value="code">
-<!-- 									<input type="hidden" name="redirect_uri" value="http://localhost:8088/openbanking/callback"> -->
-									<input type="hidden" name="redirect_uri" value="http://itwillbs7.cafe24.com/openbanking/callback">
+									<input type="hidden" name="redirect_uri" value="http://localhost:8080/openbanking/callback">
+<!-- 									<input type="hidden" name="redirect_uri" value="http://itwillbs7.cafe24.com/openbanking/callback"> -->
 									<input type="hidden" name="scope" value="login inquiry transfer oob">
 									<input type="hidden" name="state" value="12345678123456781234567812345678">
 									<input type="hidden" name="auth_type" value="0">

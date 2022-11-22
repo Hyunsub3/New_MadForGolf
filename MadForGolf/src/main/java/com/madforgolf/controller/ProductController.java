@@ -481,22 +481,23 @@ public class ProductController {
 			log.info("fileList" + fileList);
 			
 			// 파일 업로드
-//			String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
-			String uploadFolder1 = "../webapps/ROOT/resources/product_img";
+			String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
+//			String uploadFolder1 = "../webapps/ROOT/resources/product_img";
 			// 속도가 느려 초반에 엑박뜸 and 경로 일치 필요 => but, 깃허브 연동 o
-//			String uploadFolder2 = request.getServletContext().getRealPath("resources/product_img");
+			String uploadFolder2 = request.getServletContext().getRealPath("resources/product_img");
 			// 메서드를 통한 경로 => 속도가 빠름, 경로 일치 불필요 => but, 깃허브 연동 x
 			// 파일 저장 경로 : D:\workspace_sts6\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MadForGolf\resources\product_img
 			// => 둘 다 필요
 			
 			// 파일 생성
-			File file1 = new File(uploadFolder1 + "/" + uFileName);
-//			File file2 = new File(uploadFolder2 + "\\" + uFileName);
+//			File file1 = new File(uploadFolder1 + "/" + uFileName);
+			File file1 = new File(uploadFolder1 + "//" + uFileName);
+			File file2 = new File(uploadFolder2 + "\\" + uFileName);
 				
 			if(mFile.getSize() != 0) { // 첨부파일이 있을 때				
 				mFile.transferTo(file1); // 첨부파일로 전달된 정보를 파일로 전달
-//				mFile.transferTo(file2); // 첨부파일로 전달된 정보를 파일로 전달
-//				Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
+				mFile.transferTo(file2); // 첨부파일로 전달된 정보를 파일로 전달
+				Files.copy(file2.toPath(), file1.toPath(), StandardCopyOption.REPLACE_EXISTING); // file2를 file1으로 복사
 				log.info("파일 업로드 성공");
 			} // if
 			
@@ -612,10 +613,10 @@ public class ProductController {
 					
 					if(!oFileName.equals("")) {
 						// 파일 업로드 경로
-						String uploadFolder1 = "../webapps/ROOT/resources/product_img";
-//						String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
+//						String uploadFolder1 = "../webapps/ROOT/resources/product_img";
+						String uploadFolder1 = "C:\\Users\\ITWILL\\git\\New_MadForGolf\\MadForGolf\\src\\main\\webapp\\resources\\product_img";
 						// 속도가 느려 초반에 엑박뜸 and 경로 일치 필요 => but, 깃허브 연동 o
-//						String uploadFolder2 = request.getServletContext().getRealPath("resources/product_img");
+						String uploadFolder2 = request.getServletContext().getRealPath("resources/product_img");
 						// 메서드를 통한 경로 => 속도가 빠름, 경로 일치 불필요 => but, 깃허브 연동 x
 						// 파일 저장 경로 : D:\workspace_sts6\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MadForGolf\resources\product_img
 						// => 둘 다 필요
@@ -639,24 +640,24 @@ public class ProductController {
 							case "file1" : {
 								File oldDeleteFile1 = new File(uploadFolder1 + "\\" + oldfile1);
 								oldDeleteFile1.delete();
-//								File oldDeleteFile2 = new File(uploadFolder2 + "\\" + oldfile1);
-//								oldDeleteFile2.delete();
+								File oldDeleteFile2 = new File(uploadFolder2 + "\\" + oldfile1);
+								oldDeleteFile2.delete();
 								vo.setProd_img(uFileName);
 								break;
 							}
 							case "file2" : {
 								File oldDeleteFile1 = new File(uploadFolder1 + "\\" + oldfile2);
 								oldDeleteFile1.delete();
-//								File oldDeleteFile2 = new File(uploadFolder2 + "\\" + oldfile2);
-//								oldDeleteFile2.delete();
+								File oldDeleteFile2 = new File(uploadFolder2 + "\\" + oldfile2);
+								oldDeleteFile2.delete();
 								vo.setProd_img2(uFileName);
 								break;
 							}
 							case "file3" : {
 								File oldDeleteFile1 = new File(uploadFolder1 + "\\" + oldfile3);
 								oldDeleteFile1.delete();
-//								File oldDeleteFile2 = new File(uploadFolder2 + "\\" + oldfile3);
-//								oldDeleteFile2.delete();
+								File oldDeleteFile2 = new File(uploadFolder2 + "\\" + oldfile3);
+								oldDeleteFile2.delete();
 								vo.setProd_img3(uFileName);
 								break;
 							}
@@ -670,12 +671,13 @@ public class ProductController {
 						log.info("fileList" + fileList);
 						
 						// 파일 생성
-						File file1 = new File(uploadFolder1 + "/" + uFileName); // 학원에서 사용할 때 주석 풀면 됩니다.
-//						File file2 = new File(uploadFolder2 + "\\" + uFileName);
+//						File file1 = new File(uploadFolder1 + "/" + uFileName); // 학원에서 사용할 때 주석 풀면 됩니다.
+						File file1 = new File(uploadFolder1 + "\\" + uFileName); // 학원에서 사용할 때 주석 풀면 됩니다.
+						File file2 = new File(uploadFolder2 + "\\" + uFileName);
 						
 						if(mFile.getSize() != 0) { // 첨부파일이 있을 때				
 							mFile.transferTo(file1); // 첨부파일로 전달된 정보를 파일로 전달  // 학원에서 사용할 때 주석 풀면 됩니다.
-//							mFile.transferTo(file2);
+							mFile.transferTo(file2);
 							log.info("파일 업로드 성공");
 						} // if
 					} // if(oFileName)
