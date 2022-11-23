@@ -46,7 +46,7 @@
 <br />
 <div align="center">
   <a href="https://zenml.io">
-    <img src="docs/book/assets/zenml_logo.png" alt="Logo" width="400">
+    <img src="docs/book/assets/zenml_logo.png" alt="Mad For Golf LOGO" width="400">
   </a>
 
   <h3 align="center">동네기반의 P2P 골프용품 중고거래 플랫폼</h3>
