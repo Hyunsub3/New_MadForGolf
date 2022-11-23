@@ -75,7 +75,7 @@ log.info("listAll() 호출");
 			} else {
 				productObj.put("addr", (String)session.getAttribute("addr"));
 				productList = sqlSession.selectList(NAMESPACE + ".listAll1-1", productObj);				
-				log.info("Mapper - listAll1-1 호출(로그인 x : GO 이용 리스트 출력)");
+				log.info("Mapper - listAll1-1 호출(로그인 x : Geo 이용 리스트 출력)");
 			}
 		} else {
 			if((String)session.getAttribute("user_id") != null) {
@@ -85,7 +85,7 @@ log.info("listAll() 호출");
 			} else {
 				productObj.put("addr", (String)session.getAttribute("addr"));
 				productList = sqlSession.selectList(NAMESPACE + ".listAll2-1", productObj);				
-				log.info("Mapper - listAll2-1 호출(로그인 x : GO 이용 리스트 출력)");
+				log.info("Mapper - listAll2-1 호출(로그인 x : Geo 이용 리스트 출력)");
 			}
 		}
 		
@@ -120,7 +120,7 @@ log.info("listAll2() 호출");
 			} else {
 				productObj.put("addr", (String)session.getAttribute("addr"));
 				productList = sqlSession.selectList(NAMESPACE + ".listLike1-1", productObj);				
-				log.info("Mapper - listLike1-1 호출(로그인 x : GO 이용 리스트 출력)");
+				log.info("Mapper - listLike1-1 호출(로그인 x : Geo 이용 리스트 출력)");
 			}
 		} else {
 			if((String)session.getAttribute("user_id") != null) {
@@ -130,7 +130,7 @@ log.info("listAll2() 호출");
 			} else {
 				productObj.put("addr", (String)session.getAttribute("addr"));
 				productList = sqlSession.selectList(NAMESPACE + ".listLike2-1", productObj);				
-				log.info("Mapper - listLike2-1 호출(로그인 x : GO 이용 리스트 출력)");
+				log.info("Mapper - listLike2-1 호출(로그인 x : Geo 이용 리스트 출력)");
 			}
 		}
 		
