@@ -276,14 +276,14 @@
 								    </a> --%>
 								   	
 								   	<!-- 네이버 -->
-								    <a class="naverLogin" href="${naverURL }">
-								   		<img src="${pageContext.request.contextPath }/resources/icon/naverlogin.PNG" style="width:368pt;height:50pt;margin:auto;">
-								    </a><br><br>
+<%-- 								    <a class="naverLogin" href="${naverURL }"> --%>
+<%-- 								   		<img src="${pageContext.request.contextPath }/resources/icon/naverlogin.PNG" style="width:368pt;height:50pt;margin:auto;"> --%>
+<!-- 								    </a><br><br> -->
 								   
 								    <!-- 카카오 -->
-								    <a class="kakaoLogin" href="${kakaoURL }">
-								   		<img src="${pageContext.request.contextPath }/resources/icon/kakaologin.PNG" style="width:368pt;height:50pt;margin:auto;"><br><br>
-								    </a>
+<%-- 								    <a class="kakaoLogin" href="${kakaoURL }"> --%>
+<%-- 								   		<img src="${pageContext.request.contextPath }/resources/icon/kakaologin.PNG" style="width:368pt;height:50pt;margin:auto;"><br><br> --%>
+<!-- 								    </a> -->
 								    
 								    
 								</div>

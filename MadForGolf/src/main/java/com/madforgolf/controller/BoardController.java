@@ -476,7 +476,7 @@ public class BoardController {
 					
 					//파일을 저장소에 저장하기 위한 파일 객체 생성 후 지정
 					//지정된 위치에 파일 저장
-					File file1 = new File(uploadFolder1+"\\"+uploadFileName);
+					File file1 = new File(uploadFolder1+"/"+uploadFileName);
 //					File file2 = new File(uploadFolder2+"\\"+uploadFileName);
 					
 					log.info("파일 저장을 위한 객체 생성 성공");

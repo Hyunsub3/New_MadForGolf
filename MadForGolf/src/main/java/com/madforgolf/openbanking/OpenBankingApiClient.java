@@ -43,7 +43,7 @@ public class OpenBankingApiClient {
 	
 	private String client_id="6f948a13-11af-4892-b746-ee67d358abf2";
 	private String client_secret="4008271b-939d-4ee9-a981-5a132490eafc";
-	private String redirect_uri="http://itwillbs7.cafe24.com/openbanking/callback";
+	private String redirect_uri="https://madforgolf.tk/openbanking/callback";
 //	private String redirect_uri="http://localhost:8088/openbanking/callback";
 	private String grant_type="authorization_code";
 	

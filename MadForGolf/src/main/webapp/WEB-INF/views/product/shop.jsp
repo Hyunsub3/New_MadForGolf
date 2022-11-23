@@ -6,6 +6,12 @@
 <%@ include file="../include/header.jsp" %>
 
 <style type="text/css">
+#empty_box{
+	height:800px; 
+	color: 52734D;
+	font-weight: bold;
+	font-size: 20px;
+}
 #topMenu {
 	height: 30px;
 	width: 1100px;
@@ -579,6 +585,15 @@ a.button {
    	</div>
 	<!-- =================================남성용/여성용 성별 구분 상품 카테고리===========================================   -->
 	
+	<c:choose>
+		<c:when test="${empty productList}">
+			<div class="container" id="empty_box">해당 지역은 아직 등록된 상품이 없습니다.</div>
+		</c:when>
+		
+		<c:when test="${!empty productList}">
+		
+
+	
 	<!-- ##### Shop Area Start ##### -->
 	<section class="shop-page section-padding-0-100" style="width: 80%; margin: auto;" id="container2">
         <div class="container" >
@@ -669,6 +684,7 @@ a.button {
 <!-- 	</div> -->
 <!-- </div> -->
 </section>
-
+		</c:when>
+	</c:choose>
     <!-- ##### Shop Area End ##### -->
 <%@ include file="../include/footer.jsp" %>

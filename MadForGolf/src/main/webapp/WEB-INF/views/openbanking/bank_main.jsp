@@ -62,7 +62,7 @@
 						$('#req_bank_name').val(data.bank_name);
 						$('#req_account_holder_name').val(data.account_holder_name);
 					} else {
-						alert('출금에 실패하였습니다.');
+						alert('출금에 실패하였습니다.'+data.rsp_message);
 						$.ajax({
 							url  : "/deal/deleteBuyer",
 							type : "GET",

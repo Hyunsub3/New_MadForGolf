@@ -181,7 +181,7 @@
 							<script>
 							$(window).on('load', function() {
 								// 주소명 가져오기
-								alert("카카오 맵 불러오기 ");
+// 								alert("카카오 맵 불러오기 ");
 								function getAddr(lat, lng){
 
 								     let geocoder = new kakao.maps.services.Geocoder();

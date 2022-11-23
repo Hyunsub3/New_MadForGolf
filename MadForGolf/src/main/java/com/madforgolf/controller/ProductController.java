@@ -1034,7 +1034,13 @@ public class ProductController {
 		@RequestMapping(value = "/address", method = RequestMethod.GET)
 		public void addrGET(@RequestParam("address") String address, HttpSession session) throws Exception {
 			
-			session.setAttribute("addr", address);
+		log.info("addrGET() 호출");
+					
+					String[] addresses = address.split(" ");
+					String addr = addresses[0] + " " + addresses[1];
+					log.info(addr);
+					
+					session.setAttribute("addr", addr);
 		}
 
 	

@@ -429,8 +429,7 @@ $(document).ready(function(){
                         </div>
                     </div> --%>
                     
-                    
-                    
+
                     <div class="col-12 col-md-6 col-lg-5" >
                         <div class="single_product_thumb">
                             <div id="product_details_slider" class="carousel slide" data-ride="carousel">
@@ -456,6 +455,9 @@ $(document).ready(function(){
                     
 
 
+
+					
+					
 					
                     <div class="col-12 col-md-6">
                         <div class="single_product_desc" style="width: 410px;" id="contextBox">
@@ -535,7 +537,7 @@ $(document).ready(function(){
 									<input type="hidden" name="client_id" value="6f948a13-11af-4892-b746-ee67d358abf2">
 									<input type="hidden" name="response_type" value="code">
 <!-- 									<input type="hidden" name="redirect_uri" value="http://localhost:8088/openbanking/callback"> -->
-									<input type="hidden" name="redirect_uri" value="http://itwillbs7.cafe24.com/openbanking/callback">
+									<input type="hidden" name="redirect_uri" value="https://madforgolf.tk/openbanking/callback">
 									<input type="hidden" name="scope" value="login inquiry transfer oob">
 									<input type="hidden" name="state" value="12345678123456781234567812345678">
 									<input type="hidden" name="auth_type" value="0">
@@ -768,6 +770,7 @@ $(document).ready(function(){
             </div>
         </div>
     </section>
+
     <!-- ##### Single Product Details Area End ##### -->
 
     <!-- ##### Related Product Area Start ##### -->
