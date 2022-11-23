@@ -190,8 +190,7 @@
 	<select id="likeListCnt" resultType="Integer">
 		select count(*)
 		from mfg_like
-		where buyer_id=#{user_id} 
-		order by desc
+		where buyer_id=#{user_id}
 	</select>
 	
 
