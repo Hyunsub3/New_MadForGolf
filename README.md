@@ -95,10 +95,10 @@
   <summary>🏁 Table of Contents</summary>
   <ol>
     <li>
-      <a href="#-why-zenml">Why ZenML?</a>
+      <a href="#-why-zenml">Why Mad For Golf?</a>
     </li>
     <li>
-    <a href="#-what-is-zenml">What is ZenML?</a>
+    <a href="#-what-is-zenml">What is Mad For Golf?</a>
     </li>
     <li>
       <a href="#-getting-started">Getting Started</a>
@@ -128,7 +128,7 @@
 
 <br />
 
-# 🤖 Why ZenML?
+# 🤖 Why Mad For Golf?
 
 🤹 Are you an ML engineer or data scientist shipping models to production and juggling a plethora of tools? ZenML is here to help transition your production ML pipelines to production.
 
@@ -141,7 +141,7 @@ If you come from unstructured notebooks or scripts with lots of manual processes
 Read more [here](https://blog.zenml.io/why-zenml/).
 
 
-# 💡 What is ZenML?
+# 💡 What Mad For Golf?
 
 <div align="center">
     <img src="docs/book/assets/stack.gif">
