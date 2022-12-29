@@ -163,7 +163,7 @@ Read more on all tools you can readily use in the [integrations](https://zenml.i
 ```bash
 pip install zenml
 ```
-> **Note** - ZenML supports Python 3.7, 3.8, and 3.9.
+> **Note** - MadForGolf supports SPRING 6
 
 In order to get access to the dashboard locally, install the optional dependencies for the ZenML server:
 
