@@ -1,4 +1,4 @@
-# P2P second-hand golf tools Market - MadForGolf
+# P2P Second-hand Golf Equipment Market - MadForGolf
 ## Index
   - [Overview](#overview) 
   - [Getting Started](#getting-started)
